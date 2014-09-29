@@ -4,12 +4,11 @@ class Player {
 	int def;
    public:
 	Player (int, int, int);
-	Player;
+	Player();
 	int getHp() { return hp; }
-	int getLives() { return lives;}
 	int getAtk() { return atk; }
 	int getDef() { return def; }
-}
+};
 
 Player::Player (int inHp, int inAtk, int inDef){
 	int hp = inHp;
