@@ -23,6 +23,8 @@ int main()
 	Map beginner;
 
 	beginner.printField();
+	cout << endl;
+	cout << beginner.getField(4) << endl;
 
 	return 0;
 }

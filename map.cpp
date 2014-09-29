@@ -4,11 +4,12 @@ const int SIZE = 5;
 
 class Map{
 	int difficulty;
-	string field[SIZE][SIZE];
+	char field[SIZE][SIZE];
 
    public:
 	Map();
 	void printField();
+	string getField(int);
 	int getDifficulty() {return difficulty;}
 };
 
@@ -25,6 +26,15 @@ Map::Map(){
 			}
 		}
 	}
+}
+
+string Map::getField(int loc){
+	string retString = "     ";
+	for(int i = 0; i < SIZE; i++){
+		retString[i] = field[loc][i];
+	}
+
+	return retString;
 }
 
 void Map::printField(){
