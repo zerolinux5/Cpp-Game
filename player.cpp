@@ -11,13 +11,13 @@ class Player {
 };
 
 Player::Player (int inHp, int inAtk, int inDef){
-	int hp = inHp;
-	int atk = inAtk;
-	int def = inDef;
+	hp = inHp;
+	atk = inAtk;
+	def = inDef;
 }
 
 Player::Player(){
-	int hp = 100;
-	int atk = 1;
-	int def = 1;
+	hp = 100;
+	atk = 1;
+	def = 1;
 }
