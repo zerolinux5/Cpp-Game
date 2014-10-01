@@ -2,3 +2,8 @@ Field Key:
 * = monster
 + = player
  = blank
+
+Work on:
+maybe monsters level up too,
+player update stats function
+maybe redesign layout to be group vs group
