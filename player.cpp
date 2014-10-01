@@ -18,6 +18,7 @@ class Player {
 	int getDef() {return def;}
 	int getExperience() {return experience;}
 	void damaged(int);
+	void addExperience(int);
 };
 
 Player::Player (int inIndex, int inHp, int inAtk, int inDef, int inExperience){
@@ -41,4 +42,12 @@ Player::Player(){
 
 void Player::damaged(int damageTaken){
 	hp -= damageTaken;
+}
+
+void Player::addExperience(int newExperience){
+	experience += newExperience;
+	if(experience >= 100){
+		experience %= 100;
+		level++;
+	}
 }
