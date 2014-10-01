@@ -26,24 +26,40 @@ int findItems(Map m1, char search){
 			}
 		}
 	}
-
 	return total;
 }
+
+void mapRedraw(Map m1, int index, char direction){
+
+}
+
+/*
+void moveUnit(Map m1, int index, char direction){
+	switch(index){
+		case 1:
+			mapRedraw(m1, index, direction);
+			break;
+		case 2:
+			break;
+	}
+}
+*/
 
 int main()
 {
 	int win = 0;
-	Player p1;
-	Monster m1;
+	int index;
+	char move;
 	Map beginner;
-	int numMon = findItems(beginner, '*');
-	int numPlayers = findItems(beginner, '+');
 
+	//Main Loop
 	while(!win){
 		beginner.printField();
 
-		cout << "Number of Monsters:" << numMon << endl;
-		cout << "Number of Players:" << numPlayers << endl;
+		cout << "Enter index and direction:";
+		cin >> index >> move;
+
+		//moveUnit(index, move);
 	}
 
 	return 0;
