@@ -33,5 +33,8 @@ Monster::Monster(){
 }
 
 void Monster::damaged(int damageTaken){
-	hp -= damageTaken;
+	if(damageTaken <=0){
+	} else {
+		hp -= damageTaken;
+	}
 }
