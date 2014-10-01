@@ -28,12 +28,12 @@ Monster::Monster(){
 	srand (time(NULL));
 	index = 1;
 	hp = (rand() % 4 + 3)*10;
-	atk = rand() % 2 + 1;
+	atk = rand() % 7 + 1;
 	def = rand() % 2;
 }
 
 void Monster::damaged(int damageTaken){
-	if(damageTaken <=0){
+	if(damageTaken <= 0){
 	} else {
 		hp -= damageTaken;
 	}
