@@ -33,11 +33,11 @@ Player::Player(){
 	srand (time(NULL));
 
 	index = 1;
-	hp = (rand() % 4 + 7)*10;
-	atk = rand() % 5 + 1;
-	def = rand() % 3 + 1;
 	level = 1;
 	experience = 0;
+	hp = (rand() % 4 + 7)*10 + (30*level);
+	atk = rand() % 5 + 1 + (1.5*level);
+	def = rand() % 3 + 1 + (1.1*level);
 }
 
 void Player::damaged(int damageTaken){
