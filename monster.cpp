@@ -27,7 +27,7 @@ Monster::Monster(int inIndex, int inHp, int inAtk, int inDef){
 Monster::Monster(){
 	srand (time(NULL));
 	index = 1;
-	hp = (rand() % 4 + 3);
+	hp = (rand() % 4 + 5);
 	atk = rand() % 7 + 1;
 	def = rand() % 2;
 }
