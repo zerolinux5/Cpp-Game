@@ -5,7 +5,7 @@
 
 using namespace std;
 
-void battle(Player p1, Monster m1){
+void battle(Player &p1, Monster &m1){
 	int playerAtk = p1.getAtk() - m1.getDef();
 	int monsterAtk = m1.getAtk() - p1.getDef();
 
