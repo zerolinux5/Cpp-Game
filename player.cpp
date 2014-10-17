@@ -35,7 +35,7 @@ Player::Player(){
 	index = 1;
 	level = 1;
 	experience = 0;
-	hp = (rand() % 4 + 7)*10 + (30*level);
+	hp = (rand() % 4 + 7) + (5*level);
 	atk = rand() % 5 + 1 + (1.5*level);
 	def = rand() % 3 + 1 + (1.1*level);
 }

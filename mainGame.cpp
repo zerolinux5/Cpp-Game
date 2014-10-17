@@ -40,7 +40,7 @@ int main()
 	Monster m1;
 
 	cout << "Player Hp:" << p1.getHp() << endl;
-	cout << "Monster Hp:" << m1.getHp() << endl;
+	cout << "Monster Hp:" << m1.getHp() << endl << endl;
 
 	//Main Loop
 	while(win){
