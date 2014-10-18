@@ -1,7 +1,6 @@
 #include <iostream>
 #include "Player.cpp"
 #include "Monster.cpp"
-#include "Map.cpp"
 
 using namespace std;
 
@@ -16,25 +15,11 @@ void battle(Player &p1, Monster &m1){
 	cout << "Monster Hp left:" << m1.getHp() << endl;
 }
 
-int findItems(Map m1, char search){
-	int total = 0;
-	for(int i = 0; i < 5; i ++){
-		string checkString = m1.getField(i);
-		for(int j = 0; j < 5; j++){
-			if(checkString[j] == search){
-				total++;
-			}
-		}
-	}
-	return total;
-}
-
 int main()
 {
 	int win = 1;
 	int index;
 	char move;
-	Map beginner;
 
 	Player p1;
 	Monster m1;
