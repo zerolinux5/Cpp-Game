@@ -11,7 +11,7 @@ class Player {
 	int level;
    public:
 	Player (int, int, int, int, int);
-	Player();
+	Player(unsigned int);
 	int getIndex(){return index;}
 	int getHp() {return hp;}
 	int getAtk() {return atk;}
@@ -29,8 +29,8 @@ Player::Player (int inIndex, int inHp, int inAtk, int inDef, int inExperience){
 	experience = inExperience;
 }
 
-Player::Player(){
-	srand (time(NULL));
+Player::Player(unsigned int seed){
+	srand (seed);
 
 	index = 1;
 	level = 1;

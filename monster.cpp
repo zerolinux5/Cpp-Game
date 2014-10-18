@@ -9,7 +9,7 @@ class Monster {
 	int def;
    public:
 	Monster(int, int, int, int);
-	Monster();
+	Monster(unsigned int);
 	int getIndex(){return index;}
 	int getHp(){return hp;}
 	int getAtk(){return atk;}
@@ -24,8 +24,8 @@ Monster::Monster(int inIndex, int inHp, int inAtk, int inDef){
 	def = inDef;
 }
 
-Monster::Monster(){
-	srand (time(NULL));
+Monster::Monster(unsigned int seed){
+	srand (seed);
 	index = 1;
 	hp = (rand() % 4 + 5);
 	atk = rand() % 7 + 1;

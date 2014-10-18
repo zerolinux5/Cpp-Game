@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 #include "Player.cpp"
 #include "Monster.cpp"
 
@@ -20,9 +22,11 @@ int main()
 	int win = 1;
 	int index;
 	char move;
+	srand (time(NULL));
+	unsigned int seed = rand()%100;
 
-	Player p1;
-	Monster m1;
+	Player p1(seed);
+	Monster m1(seed);
 
 	cout << "Player Hp:" << p1.getHp() << endl;
 	cout << "Monster Hp:" << m1.getHp() << endl << endl;
