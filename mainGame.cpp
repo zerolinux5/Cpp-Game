@@ -13,8 +13,18 @@ void battle(Player &p1, Monster &m1){
 	m1.damaged(playerAtk);
 	p1.damaged(monsterAtk);
 
-	cout << "Player Hp left:" << p1.getHp() << endl;
-	cout << "Monster Hp left:" << m1.getHp() << endl;
+	if(p1.getHp() <= 0){
+		p1 = NULL;
+		cout << "Player Dead" << endl;
+		cout << "Monster Hp left:" << m1.getHp() << endl;
+	} else if (m1.getHp() <= 0){
+		m1 = NULL;
+		cout << "Player Hp left:" << p1.getHp() << endl;
+		cout << "Monster Dead" << endl;
+	} else {
+		cout << "Player Hp left:" << p1.getHp() << endl;
+		cout << "Monster Hp left:" << m1.getHp() << endl;
+	}
 }
 
 int main()
@@ -38,6 +48,8 @@ int main()
 
 		cout << "Battle again?" << endl;
 		cin >> win;
+
+
 	}
 
 	return 0;
