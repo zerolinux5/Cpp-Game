@@ -10,6 +10,7 @@ class Monster {
    public:
 	Monster(int, int, int, int);
 	Monster(unsigned int);
+	void dead();
 	int getIndex(){return index;}
 	int getHp(){return hp;}
 	int getAtk(){return atk;}
@@ -22,6 +23,13 @@ Monster::Monster(int inIndex, int inHp, int inAtk, int inDef){
 	hp = inHp;
 	atk = inAtk;
 	def = inDef;
+}
+
+void Monster::dead(){
+	index = 0;
+	hp = 0;
+	atk = 0;
+	def = 0;
 }
 
 Monster::Monster(unsigned int seed){

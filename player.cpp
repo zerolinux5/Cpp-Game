@@ -12,6 +12,7 @@ class Player {
    public:
 	Player (int, int, int, int, int);
 	Player(unsigned int);
+	void dead();
 	int getIndex(){return index;}
 	int getHp() {return hp;}
 	int getAtk() {return atk;}
@@ -38,6 +39,15 @@ Player::Player(unsigned int seed){
 	hp = (rand() % 4 + 7) + (5*level);
 	atk = rand() % 5 + 1 + (1.5*level);
 	def = rand() % 3 + 1 + (1*level);
+}
+
+void Player::dead(){
+	index = 0;
+	level = 0;
+	experience = 0;
+	hp = 0;
+	atk = 0;
+	def = 0;
 }
 
 void Player::damaged(int damageTaken){

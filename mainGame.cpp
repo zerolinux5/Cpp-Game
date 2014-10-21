@@ -14,11 +14,11 @@ void battle(Player &p1, Monster &m1){
 	p1.damaged(monsterAtk);
 
 	if(p1.getHp() <= 0){
-		p1 = NULL;
+		p1.dead();
 		cout << "Player Dead" << endl;
 		cout << "Monster Hp left:" << m1.getHp() << endl;
 	} else if (m1.getHp() <= 0){
-		m1 = NULL;
+		m1.dead();
 		cout << "Player Hp left:" << p1.getHp() << endl;
 		cout << "Monster Dead" << endl;
 	} else {
