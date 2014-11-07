@@ -1,10 +1,6 @@
-#include <iostream>
-#include <string>
 #include "monster.h"
 
-using namespace std;
-
-Monster::Monster(int newHp, int newSp, int newAtk, int newDef, string newElement)
+Monster::Monster(int newHp, int newSp, int newAtk, int newDef, std::string newElement)
 {
 	hp = newHp;
 	sp = newSp;
@@ -14,9 +10,9 @@ Monster::Monster(int newHp, int newSp, int newAtk, int newDef, string newElement
 }
 
 void Monster::printStats(){
-	cout << "Hp:" << hp << endl;
-	cout << "Sp:" << sp << endl;
-	cout << "Atk:" << atk << endl;
-	cout << "Def:" << def << endl;
-	cout << "Element:" << element << endl;
+	std::cout << "Hp:" << hp << std::endl;
+	std::cout << "Sp:" << sp << std::endl;
+	std::cout << "Atk:" << atk << std::endl;
+	std::cout << "Def:" << def << std::endl;
+	std::cout << "Element:" << element << std::endl;
 }
