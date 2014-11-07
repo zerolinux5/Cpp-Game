@@ -1,9 +1,6 @@
 #ifndef __MONSTER_H__
 #define __MONSTER_H__
 
-#include <iostream>
-#include <string>
-
 class Monster{
 	int hp;
 	int sp;
