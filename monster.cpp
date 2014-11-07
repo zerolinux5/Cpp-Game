@@ -1,48 +1,23 @@
-#include <math.h>
-#include <stdlib.h>
-#include <time.h>
-
-class Monster {
-	int index;
+class Monster{
 	int hp;
-	int atk;
+	int sp;
 	int def;
+	int atk;
+	string element;
    public:
-	Monster(int, int, int, int);
-	Monster(unsigned int);
-	void dead();
-	int getIndex(){return index;}
-	int getHp(){return hp;}
-	int getAtk(){return atk;}
-	int getDef(){return def;}
-	void damaged(int);
+	void Monster(int, int, int, int, string);
+	int getHp() {return hp;}
+	int getSp() {return sp;}
+	int getDef() {return def;}
+	int getAtk() {return atk;}
+	string getElement() {return element;}	
 };
 
-Monster::Monster(int inIndex, int inHp, int inAtk, int inDef){
-	index = inIndex;
-	hp = inHp;
-	atk = inAtk;
-	def = inDef;
-}
-
-void Monster::dead(){
-	index = 0;
-	hp = 0;
-	atk = 0;
-	def = 0;
-}
-
-Monster::Monster(unsigned int seed){
-	srand (seed);
-	index = 1;
-	hp = (rand() % 4 + 5);
-	atk = rand() % 7 + 1;
-	def = rand() % 2;
-}
-
-void Monster::damaged(int damageTaken){
-	if(damageTaken <= 0){
-	} else {
-		hp -= damageTaken;
-	}
+Monster::Monster(int newHp, int newSp, int newDef, int newAtk, string newElement)
+{
+	hp = newHo;
+	sp = newSp;
+	atk = newAtk;
+	def = newDef;
+	element = newElement;
 }
