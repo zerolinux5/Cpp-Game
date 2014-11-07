@@ -1,3 +1,5 @@
+#include <iostream>
+#include <string>
 #include "attack.h"
 
 Attack::Attack(int newDamage, std::string newName, std::string newDescription)

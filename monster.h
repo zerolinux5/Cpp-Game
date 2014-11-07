@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include "attack.h"
 
 class Monster{
 	int hp;

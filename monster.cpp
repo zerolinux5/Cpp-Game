@@ -1,3 +1,5 @@
+#include <iostream>
+#include <string>
 #include "monster.h"
 
 Monster::Monster(int newHp, int newSp, int newAtk, int newDef, std::string newElement)
