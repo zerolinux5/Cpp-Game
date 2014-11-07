@@ -9,5 +9,5 @@ Attack::Attack(int newDamage, std::string newName, std::string newDescription)
 
 void Attack::printAtk()
 {
-	std::cout << name << ": \n\t" << description << "\nBase Power:" << damage << std::endl;
+	std::cout << name << "\nBase Power:" << damage << ": \n\t" << description << std::endl;
 }
