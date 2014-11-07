@@ -1,23 +1,8 @@
 #include <iostream>
 #include <string>
+#include "monster.h"
 
 using namespace std;
-
-class Monster{
-	int hp;
-	int sp;
-	int atk;
-	int def;
-	string element;
-   public:
-	Monster(int, int, int, int, string);
-	int getHp() {return hp;}
-	int getSp() {return sp;}
-	int getDef() {return def;}
-	int getAtk() {return atk;}
-	string getElement() {return element;}	
-	void printStats();
-};
 
 Monster::Monster(int newHp, int newSp, int newAtk, int newDef, string newElement)
 {

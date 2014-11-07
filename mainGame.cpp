@@ -1,4 +1,8 @@
-#include "monster.cpp"
+#include <iostream>
+#include <string>
+#include "monster.h"
+
+using namespace std;
 
 int main()
 {
