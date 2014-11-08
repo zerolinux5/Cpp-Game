@@ -1,9 +1,9 @@
 #ifndef __MONSTER_H__
 #define __MONSTER_H__
 
-#include <iostream>
-#include <string>
 #include "attack.h"
+
+const int ATTACKNUMBER = 3;
 
 class Monster{
 	int hp;
@@ -17,7 +17,7 @@ class Monster{
 	int getSp() {return sp;}
 	int getDef() {return def;}
 	int getAtk() {return atk;}
-	std::string getElement() {return element;}	
+	std::string getElement() {return element;}
 	void printStats();
 };
 

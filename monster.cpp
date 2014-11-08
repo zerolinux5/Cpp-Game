@@ -4,6 +4,7 @@
 
 Monster::Monster(int newHp, int newSp, int newAtk, int newDef, std::string newElement)
 {
+	int i = 0;
 	hp = newHp;
 	sp = newSp;
 	atk = newAtk;
@@ -12,6 +13,7 @@ Monster::Monster(int newHp, int newSp, int newAtk, int newDef, std::string newEl
 }
 
 void Monster::printStats(){
+	int i = 0;
 	std::cout << "Hp:" << hp << std::endl;
 	std::cout << "Sp:" << sp << std::endl;
 	std::cout << "Atk:" << atk << std::endl;
