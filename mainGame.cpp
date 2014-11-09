@@ -3,6 +3,7 @@
 #include "monster.h"
 #include "attack.h"
 #include "object.h"
+#include "stage.h"
 
 using namespace std;
 
@@ -19,10 +20,15 @@ int main()
 	firestorm.printAtk();
 
 	cout << endl;
-	
+
 	//Object stats HP, DEF, Name
 	Object tree (100, 2, "Tree");
 	tree.printObject();
+
+	cout << endl;
+	//Set the stage using 3 different values and a default to grab edge cases
+	Stage s1 ("Start", "This stage has nothing...", 4);
+
 
 	return 0;
 }
