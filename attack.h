@@ -1,9 +1,6 @@
 #ifndef __ATTACK_H__
 #define __ATTACK_H__
 
-#include <iostream>
-#include <string>
-
 class Attack{
 	int damage;
 	std::string name;
