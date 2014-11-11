@@ -36,6 +36,11 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum)
 				}
 				//std::cout << std::endl;
 			}
+			for(i = 0; i < OBSTACLENUMBER; i++){
+				randX = rand() % BOARDSIZE;
+				randY = rand() % BOARDSIZE;
+				board[randY][randX] = "Mound";
+			}
 			break;
 		case 3:
 			for(;i < BOARDSIZE; i++){
@@ -44,6 +49,11 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum)
 					//std::cout << "W ";
 				}
 				//std::cout << std::endl;
+			}
+			for(i = 0; i < OBSTACLENUMBER; i++){
+				randX = rand() % BOARDSIZE;
+				randY = rand() % BOARDSIZE;
+				board[randY][randX] = "Wall";
 			}
 			break;
 		default:
