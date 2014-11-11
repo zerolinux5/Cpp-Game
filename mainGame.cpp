@@ -37,7 +37,7 @@ int main()
 
 	cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
-	Stage s3 ("Water", "This stage has nothing...", 3);
+	Stage s3 ("Stadium", "This stage has nothing...", 3);
 	s3.printStage();
 
 	return 0;

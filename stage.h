@@ -2,6 +2,7 @@
 #define __STAGE_H__
 
 const int BOARDSIZE = 10;
+const int OBSTACLENUMBER = 10;
 
 class Stage{
 	std::string name;
