@@ -11,13 +11,28 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum)
 
 	switch(stageSet){
 		case 1:
-			std::cout << "In set 1" << std::endl;
+			for(;i < BOARDSIZE; i++){
+				for(;j < BOARDSIZE; j++){
+					board[i][j] = "G";
+					std::cout << "G" << std::endl;
+				}
+			}
 			break;
 		case 2:
-			std::cout << "In set 2" << std::endl;
+			for(;i < BOARDSIZE; i++){
+				for(;j < BOARDSIZE; j++){
+					board[i][j] = "D";
+					std::cout << "D" << std::endl;
+				}
+			}
 			break;
 		case 3:
-			std::cout << "In set 3" << std::endl;
+			for(;i < BOARDSIZE; i++){
+				for(;j < BOARDSIZE; j++){
+					board[i][j] = "W";
+					std::cout << "W" << std::endl;
+				}
+			}
 			break;
 		default:
 			std::cout << "Nothing Here" << std::endl;
@@ -31,7 +46,7 @@ void Stage::printStage()
 
 	for(; y < BOARDSIZE; y++){
 		for(;x < BOARDSIZE; x++){
-			if (x == BOARDSIZE - 1){
+			if (x == (BOARDSIZE - 1)){
 				std::cout << board[y][x] << std::endl;
 			} else {
 				std::cout << board[y][x] << " ";

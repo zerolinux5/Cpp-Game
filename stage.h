@@ -12,7 +12,7 @@ class Stage{
    	Stage(std::string, std::string, int);
    	std::string getName() {return name;}
    	std::string getDescription() {return description;}
-   	std::string getBoardLocation(int x, int y) {return board[x][y];}
+   	std::string getBoardLocation(int y, int x) {return board[y][x];}
    	void printStage();
 };
 
