@@ -20,3 +20,4 @@ git:
 	git add -A
 	git commit -m"$(RUN_ARGS)"
 	git push -u origin master
+	clear
