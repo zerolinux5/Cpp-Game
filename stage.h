@@ -14,7 +14,7 @@ class Stage{
    	Stage(std::string, std::string, int);
    	std::string getName() {return name;}
    	std::string getDescription() {return description;}
-   	std::string getBoardLocation(int y, int x) {return board[y][x];}
+   	std::string getBoardLocation(int y, int x) {return (((x < BOARDSIZE) && (y < BOARDSIZE)) ? board[y][x] : "NULL");}
    	void printStage();
 };
 
