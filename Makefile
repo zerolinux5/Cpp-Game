@@ -1,3 +1,8 @@
+run:
+	make all
+	clear
+	./mainGame
+
 all: mainGame
 
 mainGame: mainGame.o monster.o attack.o object.o stage.o

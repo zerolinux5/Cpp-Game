@@ -9,10 +9,11 @@ class Stage{
 	std::string description;
 	std::string board[BOARDSIZE][BOARDSIZE];
 	int stageSet;
-	void addObstacles(std::string);
+	void addObstacles(std::string, unsigned int);
 	int clasify(int, int);
+	void relocate(int, int);
    public:
-   	Stage(std::string, std::string, int);
+   	Stage(std::string, std::string, int, unsigned int);
    	std::string getName() {return name;}
    	std::string getDescription() {return description;}
    	std::string getBoardLocation(int y, int x) {return (((x < BOARDSIZE) && (y < BOARDSIZE)) ? board[y][x] : "NULL");}

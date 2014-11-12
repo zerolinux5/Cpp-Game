@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
 #include "monster.h"
+
+#include <stdlib.h>
+#include <time.h>
 #include "attack.h"
 #include "object.h"
 #include "stage.h"
@@ -9,6 +12,9 @@ using namespace std;
 
 int main()
 {
+	//For random seed to pass in to stage
+	srand (time(NULL));
+
 	//Monster stats HP, SP, Atk, Def, Element
 	Monster m1 (10, 8, 5, 3, "Darkness", "Racoonja");
 	m1.printStats();
@@ -27,7 +33,7 @@ int main()
 
 	cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
-	Stage s1 ("Grassland", "This stage has nothing...", 1);
+	Stage s1 ("Grassland", "This stage has nothing...", 1, (rand() % 1000));
 	s1.printStage();
 
 	cout << "\nShould be either Grass or Tree: " << s1.getBoardLocation(1,1) << endl;
@@ -36,12 +42,12 @@ int main()
 
 	cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
-	Stage s2 ("Desert", "This stage has nothing...", 2);
+	Stage s2 ("Desert", "This stage has nothing...", 2, (rand() % 1000));
 	s2.printStage();
 
 	cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
-	Stage s3 ("Stadium", "This stage has nothing...", 3);
+	Stage s3 ("Stadium", "This stage has nothing...", 3, (rand() % 1000));
 	s3.printStage();
 
 
