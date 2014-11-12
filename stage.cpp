@@ -5,13 +5,24 @@
 #include "stage.h"
 #include "object.h"
 
+
+//Private helper function to add obstacles
+void Stage::addObstacles(std::string obstacleName){
+	int i = 0, randX, randY;
+	srand (time(NULL));
+	for(; i < OBSTACLENUMBER; i++){
+		randX = rand() % BOARDSIZE;
+		randY = rand() % BOARDSIZE;
+		board[randY][randX] = obstacleName;
+	}
+}
+
 Stage::Stage(std::string newName, std::string newDescription, int stageNum)
 {
-	int i = 0, j = 0, randX, randY;
+	int i = 0, j = 0;
 	name = newName;
 	description = newDescription;
 	stageSet = stageNum;
-	srand (time(NULL));
 
 	switch(stageSet){
 		case 1:
@@ -22,11 +33,7 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum)
 				}
 				//std::cout << std::endl;
 			}
-			for(i = 0; i < OBSTACLENUMBER; i++){
-				randX = rand() % BOARDSIZE;
-				randY = rand() % BOARDSIZE;
-				board[randY][randX] = "Tree";
-			}
+			addObstacles("Tree");
 			break;
 		case 2:
 			for(;i < BOARDSIZE; i++){
@@ -36,11 +43,7 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum)
 				}
 				//std::cout << std::endl;
 			}
-			for(i = 0; i < OBSTACLENUMBER; i++){
-				randX = rand() % BOARDSIZE;
-				randY = rand() % BOARDSIZE;
-				board[randY][randX] = "Mound";
-			}
+			addObstacles("Mound");
 			break;
 		case 3:
 			for(;i < BOARDSIZE; i++){
@@ -50,11 +53,7 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum)
 				}
 				//std::cout << std::endl;
 			}
-			for(i = 0; i < OBSTACLENUMBER; i++){
-				randX = rand() % BOARDSIZE;
-				randY = rand() % BOARDSIZE;
-				board[randY][randX] = "Wall";
-			}
+			addObstacles("Wall");
 			break;
 		default:
 			std::cout << "Nothing Here" << std::endl;
