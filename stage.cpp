@@ -5,6 +5,33 @@
 #include "stage.h"
 #include "object.h"
 
+//0-8
+enum Location{CornerLeftT, Top, CornerRightT, Left, Middle, Right, CornerLeftB, Bottom, CornerRightB};
+
+int Stage::clasify(int x, int y){
+	int flag;
+	if(x == 0 && y == 0){
+		flag = CornerLeftT;
+	} else if ((x == BOARDSIZE - 1) && y == 0){
+		flag = CornerRightT;
+	} else if (x == 0 && (y == BOARDSIZE - 1)){
+		flag = CornerLeftB;
+	} else if ((x == BOARDSIZE - 1) && (y == BOARDSIZE - 1)){
+		flag = CornerRightB;
+	} else if (y == 0){
+		flag = Top;
+	} else if (y == BOARDSIZE - 1){
+		flag = Bottom;
+	} else if (x == 0){
+		flag = Left;
+	} else if (x == BOARDSIZE - 1){
+		flag = Right;
+	} else {
+		flag = Middle;
+	}
+
+	return flag;
+}
 
 //Private helper function to add obstacles
 void Stage::addObstacles(std::string obstacleName){

@@ -10,6 +10,7 @@ class Stage{
 	std::string board[BOARDSIZE][BOARDSIZE];
 	int stageSet;
 	void addObstacles(std::string);
+	int clasify(int, int);
    public:
    	Stage(std::string, std::string, int);
    	std::string getName() {return name;}
