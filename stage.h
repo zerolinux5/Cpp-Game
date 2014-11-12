@@ -11,7 +11,7 @@ class Stage{
 	int stageSet;
 	void addObstacles(std::string, unsigned int);
 	int clasify(int, int);
-	void relocate(int, int);
+	int relocate(std::string, int, int);
    public:
    	Stage(std::string, std::string, int, unsigned int);
    	std::string getName() {return name;}

@@ -5,6 +5,12 @@
 #include "stage.h"
 #include "object.h"
 
+#define BOARD (board[y][x])
+#define XPLUS (board[y][x+1])
+#define YLPUS (board[y+1][x])
+#define XMINUS (board[y][x-1])
+#define YMINUS (board[y-1][x])
+
 //0-8
 enum Location{CornerLeftT, Top, CornerRightT, Left, Middle, Right, CornerLeftB, Bottom, CornerRightB};
 
@@ -34,42 +40,99 @@ int Stage::clasify(int x, int y){
 	return flag;
 }
 
-void Stage::relocate(int x, int y){
-	int location = clasify(x, y);
+int Stage::relocate(std::string obstacleName, int x, int y){
+	int flag = 0, location = clasify(x, y);
 
 	switch(location){
 		case CornerLeftT:
 			std::cout << "case CornerLeftT" << std::endl;
+			if (obstacleName.compare(XPLUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YLPUS) == 0){
+				flag = 1;
+			}
 			break;
 		case Top:
 			std::cout << "case Top" << std::endl;
+			if (obstacleName.compare(XPLUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YLPUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(XMINUS) == 0){
+				flag = 1;
+			}
 			break;
 		case CornerRightT:
 			std::cout << "case CornerRightT" << std::endl;
+			if (obstacleName.compare(XMINUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YLPUS) == 0){
+				flag = 1;
+			}
 			break;
 		case Left:
 			std::cout << "case Left" << std::endl;
+			if (obstacleName.compare(XPLUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YLPUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YMINUS) == 0){
+				flag = 1;
+			}
 			break;
 		case Middle:
 			std::cout << "case Middle" << std::endl;
+			if (obstacleName.compare(XPLUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YLPUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(XMINUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YMINUS) == 0){
+				flag = 1;
+			}
 			break;
 		case Right:
 			std::cout << "case Right" << std::endl;
+			if (obstacleName.compare(XMINUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YLPUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YMINUS) == 0){
+				flag = 1;
+			}
 			break;
 		case CornerLeftB:
 			std::cout << "case CornerLeftB" << std::endl;
+			if (obstacleName.compare(XPLUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YMINUS) == 0){
+				flag = 1;
+			}
 			break;
 		case Bottom:
 			std::cout << "case Bottom" << std::endl;
+			if (obstacleName.compare(XPLUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(XMINUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YMINUS) == 0){
+				flag = 1;
+			}
 			break;
 		case CornerRightB:
 			std::cout << "case CornerRightB" << std::endl;
+			if (obstacleName.compare(XMINUS) == 0){
+				flag = 1;
+			} else if (obstacleName.compare(YMINUS) == 0){
+				flag = 1;
+			}
 			break;
 		default:
 			std::cout << "Error" << std::endl;
 			break;
-
 	}
+	return flag;
 }
 
 //Private helper function to add obstacles
@@ -77,9 +140,10 @@ void Stage::addObstacles(std::string obstacleName, unsigned int seed){
 	int i = 0, randX, randY, segment;
 	srand (seed);
 	for(; i < OBSTACLENUMBER; i++){
-		randX = rand() % BOARDSIZE;
-		randY = rand() % BOARDSIZE;
-		relocate(randX, randY);
+		do{
+			randX = rand() % BOARDSIZE;
+			randY = rand() % BOARDSIZE;
+		} while (relocate(obstacleName, randX, randY));
 		board[randY][randX] = obstacleName;
 	}
 }
