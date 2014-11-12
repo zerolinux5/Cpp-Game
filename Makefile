@@ -8,16 +8,3 @@ mainGame.o: mainGame.cpp monster.cpp attack.cpp object.cpp stage.cpp
 
 clean:
 	rm *.o mainGame
-
-ifeq (git,$(firstword $(MAKECMDGOALS)))
-  # use the rest as arguments for "run"
-  RUN_ARGS := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
-  # ...and turn them into do-nothing targets
-  $(eval $(RUN_ARGS):;@:)
-endif
-
-git:
-	git add -A
-	git commit -m"$(RUN_ARGS)"
-	git push -u origin master
-	clear
