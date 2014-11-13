@@ -163,32 +163,32 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 		case 1:
 			for(;i < BOARDSIZE; i++){
 				for(j = 0;j < BOARDSIZE; j++){
-					board[i][j] = "Grass";
+					board[i][j] = "_";
 					//std::cout << "G ";
 				}
 				//std::cout << std::endl;
 			}
-			addObstacles("Tree",seed);
+			addObstacles("^",seed);
 			break;
 		case 2:
 			for(;i < BOARDSIZE; i++){
 				for(j = 0;j < BOARDSIZE; j++){
-					board[i][j] = "Desert";
+					board[i][j] = "_";
 					//std::cout << "D ";
 				}
 				//std::cout << std::endl;
 			}
-			addObstacles("Mound",seed);
+			addObstacles("^",seed);
 			break;
 		case 3:
 			for(;i < BOARDSIZE; i++){
 				for(j = 0;j < BOARDSIZE; j++){
-					board[i][j] = "Concrete";
+					board[i][j] = "_";
 					//std::cout << "W ";
 				}
 				//std::cout << std::endl;
 			}
-			addObstacles("Wall",seed);
+			addObstacles("^",seed);
 			break;
 		default:
 			std::cout << "Nothing Here" << std::endl;
