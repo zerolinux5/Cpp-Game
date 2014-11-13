@@ -48,7 +48,7 @@ int Stage::relocate(std::string obstacleName, int x, int y){
 	} else {
 		switch(location){
 			case CornerLeftT:
-				std::cout << "case CornerLeftT" << std::endl;
+				//std::cout << "case CornerLeftT" << std::endl;
 				if (obstacleName.compare(XPLUS) == 0){
 					flag = 1;
 				} else if (obstacleName.compare(YLPUS) == 0){
@@ -56,7 +56,7 @@ int Stage::relocate(std::string obstacleName, int x, int y){
 				}
 				break;
 			case Top:
-				std::cout << "case Top" << std::endl;
+				//std::cout << "case Top" << std::endl;
 				if (obstacleName.compare(XPLUS) == 0){
 					flag = 1;
 				} else if (obstacleName.compare(YLPUS) == 0){
@@ -66,7 +66,7 @@ int Stage::relocate(std::string obstacleName, int x, int y){
 				}
 				break;
 			case CornerRightT:
-				std::cout << "case CornerRightT" << std::endl;
+				//std::cout << "case CornerRightT" << std::endl;
 				if (obstacleName.compare(XMINUS) == 0){
 					flag = 1;
 				} else if (obstacleName.compare(YLPUS) == 0){
@@ -74,7 +74,7 @@ int Stage::relocate(std::string obstacleName, int x, int y){
 				}
 				break;
 			case Left:
-				std::cout << "case Left" << std::endl;
+				//std::cout << "case Left" << std::endl;
 				if (obstacleName.compare(XPLUS) == 0){
 					flag = 1;
 				} else if (obstacleName.compare(YLPUS) == 0){
@@ -84,7 +84,7 @@ int Stage::relocate(std::string obstacleName, int x, int y){
 				}
 				break;
 			case Middle:
-				std::cout << "case Middle" << std::endl;
+				//std::cout << "case Middle" << std::endl;
 				if (obstacleName.compare(XPLUS) == 0){
 					flag = 1;
 				} else if (obstacleName.compare(YLPUS) == 0){
@@ -96,7 +96,7 @@ int Stage::relocate(std::string obstacleName, int x, int y){
 				}
 				break;
 			case Right:
-				std::cout << "case Right" << std::endl;
+				//std::cout << "case Right" << std::endl;
 				if (obstacleName.compare(XMINUS) == 0){
 					flag = 1;
 				} else if (obstacleName.compare(YLPUS) == 0){
@@ -106,7 +106,7 @@ int Stage::relocate(std::string obstacleName, int x, int y){
 				}
 				break;
 			case CornerLeftB:
-				std::cout << "case CornerLeftB" << std::endl;
+				//std::cout << "case CornerLeftB" << std::endl;
 				if (obstacleName.compare(XPLUS) == 0){
 					flag = 1;
 				} else if (obstacleName.compare(YMINUS) == 0){
@@ -114,7 +114,7 @@ int Stage::relocate(std::string obstacleName, int x, int y){
 				}
 				break;
 			case Bottom:
-				std::cout << "case Bottom" << std::endl;
+				//std::cout << "case Bottom" << std::endl;
 				if (obstacleName.compare(XPLUS) == 0){
 					flag = 1;
 				} else if (obstacleName.compare(XMINUS) == 0){
@@ -124,7 +124,7 @@ int Stage::relocate(std::string obstacleName, int x, int y){
 				}
 				break;
 			case CornerRightB:
-				std::cout << "case CornerRightB" << std::endl;
+				//std::cout << "case CornerRightB" << std::endl;
 				if (obstacleName.compare(XMINUS) == 0){
 					flag = 1;
 				} else if (obstacleName.compare(YMINUS) == 0){

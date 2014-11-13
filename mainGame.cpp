@@ -34,11 +34,11 @@ int main()
 	cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
 	Stage s1 ("Grassland", "This stage has nothing...", 1, (rand() % 1000));
-	s1.printStage();
 
 	cout << "\nShould be either Grass or Tree: " << s1.getBoardLocation(1,1) << endl;
-	cout << "Should be Null: " << s1.getBoardLocation(100,100) << endl;
+	cout << "Should be Null: " << s1.getBoardLocation(100,100) << endl << endl;
 
+	s1.printStage();
 
 	cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
