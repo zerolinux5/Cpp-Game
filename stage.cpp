@@ -172,7 +172,11 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 
 			//Add enemy starting location and player starting location
 			board[0][BOARDSIZE/2] = "O";
-			board[BOARDSIZE-1][BOARDSIZE/2] = "X";
+			if (BOARDSIZE % 2 == 0){
+				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = "X";
+			} else {
+				board[BOARDSIZE-2][BOARDSIZE/2] = "X";
+			}
 			break;
 		case 2:
 			for(;i < BOARDSIZE; i++){
@@ -186,7 +190,11 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 
 			//Add enemy starting location and player starting location
 			board[0][BOARDSIZE/2] = "O";
-			board[BOARDSIZE-1][BOARDSIZE/2] = "X";
+			if (BOARDSIZE % 2 == 0){
+				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = "X";
+			} else {
+				board[BOARDSIZE-2][BOARDSIZE/2] = "X";
+			}
 			break;
 		case 3:
 			for(;i < BOARDSIZE; i++){
@@ -203,7 +211,11 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 
 			//Add enemy starting location and player starting location
 			board[0][BOARDSIZE/2] = "O";
-			board[BOARDSIZE-1][BOARDSIZE/2] = "X";
+			if (BOARDSIZE % 2 == 0){
+				board[BOARDSIZE-1][(BOARDSIZE/2) - 1] = "X";
+			} else {
+				board[BOARDSIZE-1][BOARDSIZE/2] = "X";
+			}
 			break;
 	}
 }
