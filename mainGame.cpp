@@ -21,6 +21,12 @@ int main()
 
 	cout << endl;
 
+	//Monster stats HP, SP, Atk, Def, Element
+	Monster m2 (10, 8, 5, 3, "Light", "Ninjacoon");
+	m2.printStats();
+
+	cout << endl;
+
 	//Attack stats Damage, name, description
 	Attack firestorm (30, "Firestorm", "Causes fire to surround the target");
 	firestorm.printAtk();
@@ -35,12 +41,12 @@ int main()
 	//Set the stage using 3 different values and a default to grab edge cases
 	Stage s1 ("Grassland", "This stage has nothing...", 1, (rand() % 1000));
 
-	cout << "\nShould be either Grass or Tree: " << s1.getBoardLocation(1,1) << endl;
-	cout << "Should be Null: " << s1.getBoardLocation(100,100) << endl << endl;
+	//cout << "\nShould be either Grass or Tree: " << s1.getBoardLocation(1,1) << endl;
+	//cout << "Should be Null: " << s1.getBoardLocation(100,100) << endl << endl;
 
 	s1.printStage();
 
-	cout << endl;
+	/*cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
 	Stage s2 ("Desert", "This stage has nothing...", 2, (rand() % 1000));
 	s2.printStage();
@@ -48,7 +54,7 @@ int main()
 	cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
 	Stage s3 ("Stadium", "This stage has nothing...", 3, (rand() % 1000));
-	s3.printStage();
+	s3.printStage();*/
 
 
 

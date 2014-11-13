@@ -169,6 +169,10 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 				//std::cout << std::endl;
 			}
 			addObstacles("^",seed);
+
+			//Add enemy starting location and player starting location
+			board[0][BOARDSIZE/2] = "O";
+			board[BOARDSIZE-1][BOARDSIZE/2] = "X";
 			break;
 		case 2:
 			for(;i < BOARDSIZE; i++){
@@ -179,6 +183,10 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 				//std::cout << std::endl;
 			}
 			addObstacles("^",seed);
+
+			//Add enemy starting location and player starting location
+			board[0][BOARDSIZE/2] = "O";
+			board[BOARDSIZE-1][BOARDSIZE/2] = "X";
 			break;
 		case 3:
 			for(;i < BOARDSIZE; i++){
@@ -192,6 +200,10 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 			break;
 		default:
 			std::cout << "Nothing Here" << std::endl;
+
+			//Add enemy starting location and player starting location
+			board[0][BOARDSIZE/2] = "O";
+			board[BOARDSIZE-1][BOARDSIZE/2] = "X";
 			break;
 	}
 }

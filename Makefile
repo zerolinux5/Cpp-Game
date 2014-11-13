@@ -1,4 +1,5 @@
 run:
+	make clean
 	make all
 	clear
 	./mainGame
