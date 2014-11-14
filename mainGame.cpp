@@ -28,13 +28,13 @@ int main()
 	cout << endl;
 
 	//Attack stats Damage, Range, Name, Description
-	Attack kunai (10, 3, "Kunai", "Throws kunai at target");
+	Attack kunai (10, 3, 5, "Kunai", "Throws kunai at target");
 	kunai.printAtk();
 
 	cout << endl;
 
 	//Attack stats Damage, Range, Name, Description
-	Attack holydagger (30, 1, "Holydagger", "Strkes target with holy light");
+	Attack holydagger (30, 1, 10, "Holydagger", "Strkes target with holy light");
 	holydagger.printAtk();
 
 	cout << endl;
