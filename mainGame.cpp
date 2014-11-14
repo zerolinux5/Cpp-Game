@@ -15,27 +15,26 @@ int main()
 	//For random seed to pass in to stage
 	srand (time(NULL));
 
-	//Attack stats Damage, Range, Name, Description
+	//Attack stats Damage, Range, SP Cost, Name, Description
+	Attack slash (10, 1, 0, "Slash", "Slashes forward");
 	Attack kunai (10, 3, 5, "Kunai", "Throws kunai at target");
-	kunai.printAtk();
+	Attack shadowStrike (25, 2, 7, "Shadow Strike", "Slashes target with kunai");
+	Attack holydagger (30, 1, 10, "Holy Dagger", "Strkes target with holy light");
+	Attack holyShield (50, 1, 20, "Holy Shield", "Shield bashes the target");
+	//kunai.printAtk();
+	//cout << endl;
+	//holydagger.printAtk();
+	//cout << endl;
 
-	cout << endl;
-
-	//Attack stats Damage, Range, Name, Description
-	Attack holydagger (30, 1, 10, "Holydagger", "Strkes target with holy light");
-	holydagger.printAtk();
+	//Monster stats HP, SP, Atk, Def, Element
+	Monster Racoonja (10, 8, 5, 3, "Darkness", "Racoonja", &slash, &kunai, &shadowStrike);
+	Racoonja.printStats();
 
 	cout << endl;
 
 	//Monster stats HP, SP, Atk, Def, Element
-	Monster m1 (10, 8, 5, 3, "Darkness", "Racoonja", &kunai);
-	m1.printStats();
-
-	cout << endl;
-
-	//Monster stats HP, SP, Atk, Def, Element
-	Monster m2 (15, 8, 4, 4, "Light", "Ninjacoon", &holydagger);
-	m2.printStats();
+	Monster Ninjacoon (15, 8, 4, 4, "Light", "Ninjacoon", &slash, &holydagger, &holyShield);
+	Ninjacoon.printStats();
 
 	cout << endl;
 
