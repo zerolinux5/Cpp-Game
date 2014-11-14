@@ -12,8 +12,9 @@ class Monster{
 	int def;
 	std::string element;
 	std::string name;
+	Attack* basicHit;
    public:
-	Monster(int, int, int, int, std::string, std::string);
+	Monster(int, int, int, int, std::string, std::string, Attack *);
 	int getHp() {return hp;}
 	int getSp() {return sp;}
 	int getDef() {return def;}

@@ -2,7 +2,7 @@
 #include <string>
 #include "monster.h"
 
-Monster::Monster(int newHp, int newSp, int newAtk, int newDef, std::string newElement, std::string newName)
+Monster::Monster(int newHp, int newSp, int newAtk, int newDef, std::string newElement, std::string newName, Attack* baseHit)
 {
 	hp = newHp;
 	sp = newSp;
@@ -10,6 +10,7 @@ Monster::Monster(int newHp, int newSp, int newAtk, int newDef, std::string newEl
 	def = newDef;
 	element = newElement;
 	name = newName;
+	basicHit = baseHit;
 }
 
 void Monster::printStats(){
@@ -19,4 +20,6 @@ void Monster::printStats(){
 	std::cout << "Atk:" << atk << std::endl;
 	std::cout << "Def:" << def << std::endl;
 	std::cout << "Element:" << element << std::endl;
+	std::cout << "Attack:";
+	basicHit->printAtk();
 }

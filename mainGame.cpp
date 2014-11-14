@@ -15,18 +15,6 @@ int main()
 	//For random seed to pass in to stage
 	srand (time(NULL));
 
-	//Monster stats HP, SP, Atk, Def, Element
-	Monster m1 (10, 8, 5, 3, "Darkness", "Racoonja");
-	m1.printStats();
-
-	cout << endl;
-
-	//Monster stats HP, SP, Atk, Def, Element
-	Monster m2 (15, 8, 4, 4, "Light", "Ninjacoon");
-	m2.printStats();
-
-	cout << endl;
-
 	//Attack stats Damage, Range, Name, Description
 	Attack kunai (10, 3, 5, "Kunai", "Throws kunai at target");
 	kunai.printAtk();
@@ -36,6 +24,18 @@ int main()
 	//Attack stats Damage, Range, Name, Description
 	Attack holydagger (30, 1, 10, "Holydagger", "Strkes target with holy light");
 	holydagger.printAtk();
+
+	cout << endl;
+
+	//Monster stats HP, SP, Atk, Def, Element
+	Monster m1 (10, 8, 5, 3, "Darkness", "Racoonja", &kunai);
+	m1.printStats();
+
+	cout << endl;
+
+	//Monster stats HP, SP, Atk, Def, Element
+	Monster m2 (15, 8, 4, 4, "Light", "Ninjacoon", &holydagger);
+	m2.printStats();
 
 	cout << endl;
 
