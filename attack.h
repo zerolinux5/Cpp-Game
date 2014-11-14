@@ -3,11 +3,13 @@
 
 class Attack{
 	int damage;
+	int range;
 	std::string name;
 	std::string description;
    public:
-	Attack(int, std::string, std::string);
+	Attack(int, int, std::string, std::string);
 	int getDamage() {return damage;}
+	int getRange() {return range;}
 	std::string getName() {return name;}
 	std::string getDescription() {return description;}
 	void printAtk();

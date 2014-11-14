@@ -22,14 +22,20 @@ int main()
 	cout << endl;
 
 	//Monster stats HP, SP, Atk, Def, Element
-	Monster m2 (10, 8, 5, 3, "Light", "Ninjacoon");
+	Monster m2 (15, 8, 4, 4, "Light", "Ninjacoon");
 	m2.printStats();
 
 	cout << endl;
 
-	//Attack stats Damage, name, description
-	Attack firestorm (30, "Firestorm", "Causes fire to surround the target");
-	firestorm.printAtk();
+	//Attack stats Damage, Range, Name, Description
+	Attack kunai (10, 3, "Kunai", "Throws kunai at target");
+	kunai.printAtk();
+
+	cout << endl;
+
+	//Attack stats Damage, Range, Name, Description
+	Attack holydagger (30, 1, "Holydagger", "Strkes target with holy light");
+	holydagger.printAtk();
 
 	cout << endl;
 
