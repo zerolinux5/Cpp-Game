@@ -4,6 +4,7 @@
 
 #include <stdlib.h>
 #include <time.h>
+#include "point.h"
 #include "attack.h"
 #include "object.h"
 #include "stage.h"
@@ -14,6 +15,10 @@ int main()
 {
 	//For random seed to pass in to stage
 	srand (time(NULL));
+
+	Point testPoint (5, 10);
+	testPoint.printPoint();
+	cout << endl;
 
 	//Attack stats Damage, Range, SP Cost, Name, Description
 	Attack slash (10, 1, 0, "Slash", "Slashes forward");
