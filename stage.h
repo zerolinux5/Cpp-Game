@@ -9,6 +9,7 @@ class Stage{
 	std::string description;
 	std::string board[BOARDSIZE][BOARDSIZE];
 	int stageSet;
+
 	void addObstacles(std::string, unsigned int);
 	int clasify(int, int);
 	int relocate(std::string, int, int);
