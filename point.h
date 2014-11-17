@@ -9,6 +9,10 @@ class Point{
    	Point(int,int);
    	int getX() {return x;}
    	int getY() {return y;}
+   	void plusX() {x++;}
+   	void plusY() {y++;}
+   	void minusX() {x--;}
+   	void minusY() {y--;}
    	void printPoint();
 };
 
