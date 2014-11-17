@@ -254,3 +254,38 @@ void Stage::printEnemyLocation()
 	std::cout << "Enemy is at:\n";
 	enemyLocation->printPoint();
 }
+
+void Stage::movePlayerLeft()
+{
+	playerLocation->minusX();
+	board[playerLocation->getY()][playerLocation->getX()] = "_";
+	board[playerLocation->getY()][playerLocation->getX() - 1] = "X";
+}
+void Stage::movePlayerRight()
+{
+
+}
+void Stage::movePlayerUp()
+{
+
+}
+void Stage::movePlayerDown()
+{
+
+}
+void Stage::moveEnemyLeft()
+{
+
+}
+void Stage::moveEnemyRight()
+{
+
+}
+void Stage::moveEnemyUp()
+{
+
+}
+void Stage::moveEnemyDown()
+{
+
+}

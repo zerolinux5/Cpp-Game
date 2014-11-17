@@ -60,6 +60,9 @@ int main()
 	s1.printPlayerLocation();
 	s1.printEnemyLocation();
 
+	s1.movePlayerLeft();
+	s1.printPlayerLocation();
+
 	/*cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
 	Stage s2 ("Desert", "This stage has nothing...", 2, (rand() % 1000));

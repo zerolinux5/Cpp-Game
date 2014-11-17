@@ -27,6 +27,14 @@ class Stage{
    	void printStage();
    	void printPlayerLocation();
    	void printEnemyLocation();
+   	void movePlayerLeft();
+   	void movePlayerRight();
+   	void movePlayerUp();
+   	void movePlayerDown();
+   	void moveEnemyLeft();
+   	void moveEnemyRight();
+   	void moveEnemyUp();
+   	void moveEnemyDown();
 };
 
 #endif
