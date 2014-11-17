@@ -62,16 +62,24 @@ int main()
 
 	cout << endl;
 	s1.movePlayerLeft();
+	s1.moveEnemyRight();
 	s1.printPlayerLocation();
+	s1.printEnemyLocation();
 
 	s1.movePlayerRight();
+	s1.moveEnemyLeft();
 	s1.printPlayerLocation();
+	s1.printEnemyLocation();
 
 	s1.movePlayerUp();
+	s1.moveEnemyDown();
 	s1.printPlayerLocation();
+	s1.printEnemyLocation();
 
 	s1.movePlayerDown();
+	s1.moveEnemyUp();
 	s1.printPlayerLocation();
+	s1.printEnemyLocation();
 
 	/*cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases

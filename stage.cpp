@@ -279,19 +279,28 @@ void Stage::movePlayerDown()
 	board[playerLocation->getY()][playerLocation->getX()] = "_";
 	board[playerLocation->getY() + 1][playerLocation->getX()] = "X";
 }
+
 void Stage::moveEnemyLeft()
 {
-
+	enemyLocation->minusX();
+	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+	board[enemyLocation->getY()][enemyLocation->getX() - 1] = "X";
 }
 void Stage::moveEnemyRight()
 {
-
+	enemyLocation->plusX();
+	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+	board[enemyLocation->getY()][enemyLocation->getX() + 1] = "X";
 }
 void Stage::moveEnemyUp()
 {
-
+	enemyLocation->minusY();
+	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+	board[enemyLocation->getY() - 1][enemyLocation->getX()] = "X";
 }
 void Stage::moveEnemyDown()
 {
-
+	enemyLocation->plusY();
+	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+	board[enemyLocation->getY() + 1][enemyLocation->getX()] = "X";
 }
