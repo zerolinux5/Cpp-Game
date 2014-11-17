@@ -158,9 +158,11 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 	name = newName;
 	description = newDescription;
 	stageSet = stageNum;
+	enemyLocation = new Point(0, BOARDSIZE/2);
 
 	switch(stageSet){
 		case 1:
+			int flag;
 			for(;i < BOARDSIZE; i++){
 				for(j = 0;j < BOARDSIZE; j++){
 					board[i][j] = "_";
@@ -174,8 +176,10 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 			board[0][BOARDSIZE/2] = "O";
 			if (BOARDSIZE % 2 == 0){
 				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = "X";
+				playerLocation = new Point(BOARDSIZE - 1,BOARDSIZE/2 - 1);
 			} else {
-				board[BOARDSIZE-2][BOARDSIZE/2] = "X";
+				board[BOARDSIZE-1][BOARDSIZE/2] = "X";
+				playerLocation = new Point(BOARDSIZE - 1,BOARDSIZE/2);
 			}
 			break;
 		case 2:
@@ -192,8 +196,10 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 			board[0][BOARDSIZE/2] = "O";
 			if (BOARDSIZE % 2 == 0){
 				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = "X";
+				playerLocation = new Point(BOARDSIZE - 1,BOARDSIZE/2 - 1);
 			} else {
-				board[BOARDSIZE-2][BOARDSIZE/2] = "X";
+				board[BOARDSIZE-1][BOARDSIZE/2] = "X";
+				playerLocation = new Point(BOARDSIZE - 1,BOARDSIZE/2);
 			}
 			break;
 		case 3:
@@ -205,17 +211,19 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 				//std::cout << std::endl;
 			}
 			addObstacles("^",seed);
-			break;
-		default:
-			std::cout << "Nothing Here" << std::endl;
 
 			//Add enemy starting location and player starting location
 			board[0][BOARDSIZE/2] = "O";
 			if (BOARDSIZE % 2 == 0){
-				board[BOARDSIZE-1][(BOARDSIZE/2) - 1] = "X";
+				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = "X";
+				playerLocation = new Point(BOARDSIZE - 1,BOARDSIZE/2 - 1);
 			} else {
 				board[BOARDSIZE-1][BOARDSIZE/2] = "X";
+				playerLocation = new Point(BOARDSIZE - 1,BOARDSIZE/2);
 			}
+			break;
+		default:
+			std::cout << "Nothing Here" << std::endl;
 			break;
 	}
 }
@@ -233,4 +241,16 @@ void Stage::printStage()
 			}
 		}
 	}
+}
+
+void Stage::printPlayerLocation()
+{
+	std::cout << "Player is at:\n";
+	playerLocation->printPoint();
+}
+
+void Stage::printEnemyLocation()
+{
+	std::cout << "Enemy is at:\n";
+	enemyLocation->printPoint();
 }

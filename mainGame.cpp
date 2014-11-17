@@ -16,9 +16,9 @@ int main()
 	//For random seed to pass in to stage
 	srand (time(NULL));
 
-	Point testPoint (5, 10);
+	/*Point testPoint (5, 10);
 	testPoint.printPoint();
-	cout << endl;
+	cout << endl;*/
 
 	//Attack stats Damage, Range, SP Cost, Name, Description
 	Attack slash (10, 1, 0, "Slash", "Slashes forward");
@@ -55,6 +55,10 @@ int main()
 	//cout << "Should be Null: " << s1.getBoardLocation(100,100) << endl << endl;
 
 	s1.printStage();
+
+	cout << endl;
+	s1.printPlayerLocation();
+	s1.printEnemyLocation();
 
 	/*cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
