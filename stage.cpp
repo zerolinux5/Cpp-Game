@@ -263,15 +263,21 @@ void Stage::movePlayerLeft()
 }
 void Stage::movePlayerRight()
 {
-
+	playerLocation->plusX();
+	board[playerLocation->getY()][playerLocation->getX()] = "_";
+	board[playerLocation->getY()][playerLocation->getX() + 1] = "X";
 }
 void Stage::movePlayerUp()
 {
-
+	playerLocation->minusY();
+	board[playerLocation->getY()][playerLocation->getX()] = "_";
+	board[playerLocation->getY() - 1][playerLocation->getX()] = "X";
 }
 void Stage::movePlayerDown()
 {
-
+	playerLocation->plusY();
+	board[playerLocation->getY()][playerLocation->getX()] = "_";
+	board[playerLocation->getY() + 1][playerLocation->getX()] = "X";
 }
 void Stage::moveEnemyLeft()
 {

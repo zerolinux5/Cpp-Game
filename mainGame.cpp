@@ -60,7 +60,17 @@ int main()
 	s1.printPlayerLocation();
 	s1.printEnemyLocation();
 
+	cout << endl;
 	s1.movePlayerLeft();
+	s1.printPlayerLocation();
+
+	s1.movePlayerRight();
+	s1.printPlayerLocation();
+
+	s1.movePlayerUp();
+	s1.printPlayerLocation();
+
+	s1.movePlayerDown();
 	s1.printPlayerLocation();
 
 	/*cout << endl;
