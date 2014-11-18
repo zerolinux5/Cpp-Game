@@ -295,6 +295,7 @@ int Stage::playerCanMove(int direction)
 	}
 	return flag;
 }
+
 int Stage::enemyCanMove(int)
 {
 	return 0;
@@ -303,50 +304,50 @@ int Stage::enemyCanMove(int)
 //Void return functions to move the player and enemy 1 tile
 void Stage::movePlayerLeft()
 {
-	playerLocation->minusX();
 	board[playerLocation->getY()][playerLocation->getX()] = "_";
 	board[playerLocation->getY()][playerLocation->getX() - 1] = "X";
+	playerLocation->minusX();
 }
 void Stage::movePlayerRight()
 {
-	playerLocation->plusX();
 	board[playerLocation->getY()][playerLocation->getX()] = "_";
 	board[playerLocation->getY()][playerLocation->getX() + 1] = "X";
+	playerLocation->plusX();
 }
 void Stage::movePlayerUp()
 {
-	playerLocation->minusY();
 	board[playerLocation->getY()][playerLocation->getX()] = "_";
 	board[playerLocation->getY() - 1][playerLocation->getX()] = "X";
+	playerLocation->minusY();
 }
 void Stage::movePlayerDown()
 {
-	playerLocation->plusY();
 	board[playerLocation->getY()][playerLocation->getX()] = "_";
 	board[playerLocation->getY() + 1][playerLocation->getX()] = "X";
+	playerLocation->plusY();
 }
 
 void Stage::moveEnemyLeft()
 {
-	enemyLocation->minusX();
 	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
 	board[enemyLocation->getY()][enemyLocation->getX() - 1] = "X";
+	enemyLocation->minusX();
 }
 void Stage::moveEnemyRight()
 {
-	enemyLocation->plusX();
 	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
 	board[enemyLocation->getY()][enemyLocation->getX() + 1] = "X";
+	enemyLocation->plusX();
 }
 void Stage::moveEnemyUp()
 {
-	enemyLocation->minusY();
 	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
 	board[enemyLocation->getY() - 1][enemyLocation->getX()] = "X";
+	enemyLocation->minusY();
 }
 void Stage::moveEnemyDown()
 {
-	enemyLocation->plusY();
 	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
 	board[enemyLocation->getY() + 1][enemyLocation->getX()] = "X";
+	enemyLocation->plusY();
 }
