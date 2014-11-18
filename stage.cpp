@@ -267,6 +267,8 @@ int Stage::playerCanMove(int direction)
 		case LEFT:
 			if(playerLocation->getX() == 0){
 				flag = OFFEND;
+			} else if (board[playerLocation->getY()][playerLocation->getX() - 1] == OBSTACLE){
+				flag = CRASH;
 			} else {
 				flag = 1;
 			}
@@ -274,6 +276,8 @@ int Stage::playerCanMove(int direction)
 		case RIGHT:
 			if(playerLocation->getX() == BOARDSIZE - 1){
 				flag = OFFEND;
+			} else if (board[playerLocation->getY()][playerLocation->getX() + 1] == OBSTACLE){
+				flag = CRASH;
 			} else {
 				flag = 1;
 			}
@@ -281,6 +285,8 @@ int Stage::playerCanMove(int direction)
 		case UP:
 			if(playerLocation->getY() == 0){
 				flag = OFFEND;
+			} else if (board[playerLocation->getY() - 1][playerLocation->getX()] == OBSTACLE){
+				flag = CRASH;
 			} else {
 				flag = 1;
 			}
@@ -288,6 +294,8 @@ int Stage::playerCanMove(int direction)
 		case DOWN:
 			if(playerLocation->getY() == BOARDSIZE - 1){
 				flag = OFFEND;
+			} else if (board[playerLocation->getY() + 1][playerLocation->getX()] == OBSTACLE){
+				flag = CRASH;
 			} else {
 				flag = 1;
 			}
