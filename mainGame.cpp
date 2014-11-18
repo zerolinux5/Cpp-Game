@@ -82,6 +82,7 @@ int main()
 	s1.moveEnemyUp();
 	s1.printEnemyLocation();
 
+	//Test movement to see if it can move in that direction
 	cout << "------------" << endl;
 	cout << "Left:" << s1.playerCanMove(LEFT) << endl;
 	cout << "Right:" << s1.playerCanMove(RIGHT) << endl;

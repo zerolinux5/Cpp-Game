@@ -11,6 +11,10 @@
 #define XMINUS (board[y][x-1])
 #define YMINUS (board[y-1][x])
 
+#define OBSTACLE "^"
+#define ENEMY "O"
+#define PLAYER "X"
+
 //0-8
 enum Location{CornerLeftT, Top, CornerRightT, Left, Middle, Right, CornerLeftB, Bottom, CornerRightB};
 
@@ -170,15 +174,15 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 				}
 				//std::cout << std::endl;
 			}
-			addObstacles("^",seed);
+			addObstacles(OBSTACLE,seed);
 
 			//Add enemy starting location and player starting location
-			board[0][BOARDSIZE/2] = "O";
+			board[0][BOARDSIZE/2] = ENEMY;
 			if (BOARDSIZE % 2 == 0){
-				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = "X";
+				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = PLAYER;
 				playerLocation = new Point(BOARDSIZE/2 - 1,BOARDSIZE - 1);
 			} else {
-				board[BOARDSIZE-1][BOARDSIZE/2] = "X";
+				board[BOARDSIZE-1][BOARDSIZE/2] = PLAYER;
 				playerLocation = new Point(BOARDSIZE/2,BOARDSIZE - 1);
 			}
 			break;
@@ -190,15 +194,15 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 				}
 				//std::cout << std::endl;
 			}
-			addObstacles("^",seed);
+			addObstacles(OBSTACLE,seed);
 
 			//Add enemy starting location and player starting location
-			board[0][BOARDSIZE/2] = "O";
+			board[0][BOARDSIZE/2] = ENEMY;
 			if (BOARDSIZE % 2 == 0){
-				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = "X";
+				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = PLAYER;
 				playerLocation = new Point(BOARDSIZE/2 - 1,BOARDSIZE - 1);
 			} else {
-				board[BOARDSIZE-1][BOARDSIZE/2] = "X";
+				board[BOARDSIZE-1][BOARDSIZE/2] = PLAYER;
 				playerLocation = new Point(BOARDSIZE/2,BOARDSIZE - 1);
 			}
 			break;
@@ -210,15 +214,15 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 				}
 				//std::cout << std::endl;
 			}
-			addObstacles("^",seed);
+			addObstacles(OBSTACLE,seed);
 
 			//Add enemy starting location and player starting location
-			board[0][BOARDSIZE/2] = "O";
+			board[0][BOARDSIZE/2] = ENEMY;
 			if (BOARDSIZE % 2 == 0){
-				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = "X";
+				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = PLAYER;
 				playerLocation = new Point(BOARDSIZE/2 - 1,BOARDSIZE - 1);
 			} else {
-				board[BOARDSIZE-1][BOARDSIZE/2] = "X";
+				board[BOARDSIZE-1][BOARDSIZE/2] = PLAYER;
 				playerLocation = new Point(BOARDSIZE/2,BOARDSIZE - 1);
 			}
 			break;
@@ -340,49 +344,49 @@ int Stage::enemyCanMove(int direction)
 void Stage::movePlayerLeft()
 {
 	board[playerLocation->getY()][playerLocation->getX()] = "_";
-	board[playerLocation->getY()][playerLocation->getX() - 1] = "X";
+	board[playerLocation->getY()][playerLocation->getX() - 1] = PLAYER;
 	playerLocation->minusX();
 }
 void Stage::movePlayerRight()
 {
 	board[playerLocation->getY()][playerLocation->getX()] = "_";
-	board[playerLocation->getY()][playerLocation->getX() + 1] = "X";
+	board[playerLocation->getY()][playerLocation->getX() + 1] = PLAYER;
 	playerLocation->plusX();
 }
 void Stage::movePlayerUp()
 {
 	board[playerLocation->getY()][playerLocation->getX()] = "_";
-	board[playerLocation->getY() - 1][playerLocation->getX()] = "X";
+	board[playerLocation->getY() - 1][playerLocation->getX()] = PLAYER;
 	playerLocation->minusY();
 }
 void Stage::movePlayerDown()
 {
 	board[playerLocation->getY()][playerLocation->getX()] = "_";
-	board[playerLocation->getY() + 1][playerLocation->getX()] = "X";
+	board[playerLocation->getY() + 1][playerLocation->getX()] = PLAYER;
 	playerLocation->plusY();
 }
 
 void Stage::moveEnemyLeft()
 {
 	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
-	board[enemyLocation->getY()][enemyLocation->getX() - 1] = "X";
+	board[enemyLocation->getY()][enemyLocation->getX() - 1] = ENEMY;
 	enemyLocation->minusX();
 }
 void Stage::moveEnemyRight()
 {
 	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
-	board[enemyLocation->getY()][enemyLocation->getX() + 1] = "X";
+	board[enemyLocation->getY()][enemyLocation->getX() + 1] = ENEMY;
 	enemyLocation->plusX();
 }
 void Stage::moveEnemyUp()
 {
 	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
-	board[enemyLocation->getY() - 1][enemyLocation->getX()] = "X";
+	board[enemyLocation->getY() - 1][enemyLocation->getX()] = ENEMY;
 	enemyLocation->minusY();
 }
 void Stage::moveEnemyDown()
 {
 	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
-	board[enemyLocation->getY() + 1][enemyLocation->getX()] = "X";
+	board[enemyLocation->getY() + 1][enemyLocation->getX()] = ENEMY;
 	enemyLocation->plusY();
 }
