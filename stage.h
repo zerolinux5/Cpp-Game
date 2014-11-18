@@ -7,6 +7,8 @@
 #define RIGHT 1
 #define UP 2
 #define DOWN 3
+#define OFFEND 0
+#define CRASH 2
 
 const int BOARDSIZE = 10;
 const int OBSTACLENUMBER = 20;

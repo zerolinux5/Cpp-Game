@@ -265,31 +265,31 @@ int Stage::playerCanMove(int direction)
 	int flag;
 	switch(direction){
 		case LEFT:
-			if(playerLocation->getX() != 0){
-				flag = 1;
+			if(playerLocation->getX() == 0){
+				flag = OFFEND;
 			} else {
-				flag = 0;
+				flag = 1;
 			}
 			break;
 		case RIGHT:
-			if(playerLocation->getX() != BOARDSIZE - 1){
-				flag = 1;
+			if(playerLocation->getX() == BOARDSIZE - 1){
+				flag = OFFEND;
 			} else {
-				flag = 0;
+				flag = 1;
 			}
 			break;
 		case UP:
-			if(playerLocation->getY() != 0){
-				flag = 1;
+			if(playerLocation->getY() == 0){
+				flag = OFFEND;
 			} else {
-				flag = 0;
+				flag = 1;
 			}
 			break;
 		case DOWN:
-			if(playerLocation->getY() != BOARDSIZE - 1){
-				flag = 1;
+			if(playerLocation->getY() == BOARDSIZE - 1){
+				flag = OFFEND;
 			} else {
-				flag = 0;
+				flag = 1;
 			}
 			break;
 		default:
@@ -305,31 +305,31 @@ int Stage::enemyCanMove(int direction)
 	int flag;
 	switch(direction){
 		case LEFT:
-			if(enemyLocation->getX() != 0){
-				flag = 1;
+			if(enemyLocation->getX() == 0){
+				flag = OFFEND;
 			} else {
-				flag = 0;
+				flag = 1;
 			}
 			break;
 		case RIGHT:
-			if(enemyLocation->getX() != BOARDSIZE - 1){
-				flag = 1;
+			if(enemyLocation->getX() == BOARDSIZE - 1){
+				flag = OFFEND;
 			} else {
-				flag = 0;
+				flag = 1;
 			}
 			break;
 		case UP:
-			if(enemyLocation->getY() != 0){
-				flag = 1;
+			if(enemyLocation->getY() == 0){
+				flag = OFFEND;
 			} else {
-				flag = 0;
+				flag = 1;
 			}
 			break;
 		case DOWN:
-			if(enemyLocation->getY() != BOARDSIZE - 1){
-				flag = 1;
+			if(enemyLocation->getY() == BOARDSIZE - 1){
+				flag = OFFEND;
 			} else {
-				flag = 0;
+				flag = 1;
 			}
 			break;
 		default:
@@ -341,6 +341,7 @@ int Stage::enemyCanMove(int direction)
 }
 
 //Void return functions to move the player and enemy 1 tile
+//Player movement
 void Stage::movePlayerLeft()
 {
 	board[playerLocation->getY()][playerLocation->getX()] = "_";
@@ -366,6 +367,7 @@ void Stage::movePlayerDown()
 	playerLocation->plusY();
 }
 
+//Enemy movement
 void Stage::moveEnemyLeft()
 {
 	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
