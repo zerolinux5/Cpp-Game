@@ -60,6 +60,7 @@ int main()
 	s1.printPlayerLocation();
 	s1.printEnemyLocation();
 
+	//Testing movement through the board
 	cout << endl;
 	s1.movePlayerLeft();
 	s1.moveEnemyRight();

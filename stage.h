@@ -3,6 +3,11 @@
 
 #include "point.h"
 
+#define LEFT 0
+#define RIGHT 1
+#define UP 2
+#define DOWN 3
+
 const int BOARDSIZE = 10;
 const int OBSTACLENUMBER = 20;
 
@@ -25,6 +30,8 @@ class Stage{
    	std::string getDescription() {return description;}
    	std::string getBoardLocation(int y, int x) {return (((x < BOARDSIZE) && (y < BOARDSIZE)) ? board[y][x] : "NULL");}
    	void printStage();
+   	int playerCanMove(int);
+   	int enemyCanMove(int);
    	void printPlayerLocation();
    	void printEnemyLocation();
    	void movePlayerLeft();

@@ -255,6 +255,52 @@ void Stage::printEnemyLocation()
 	enemyLocation->printPoint();
 }
 
+//Check to see if player/enemy can move in said direction
+int Stage::playerCanMove(int direction)
+{
+	int flag;
+	switch(direction){
+		case LEFT:
+			if(playerLocation->getX() != 0){
+				flag = 1;
+			} else {
+				flag = 0;
+			}
+			break;
+		case RIGHT:
+			if(playerLocation->getX() != BOARDSIZE - 1){
+				flag = 1;
+			} else {
+				flag = 0;
+			}
+			break;
+		case UP:
+			if(playerLocation->getY() != 0){
+				flag = 1;
+			} else {
+				flag = 0;
+			}
+			break;
+		case DOWN:
+			if(playerLocation->getY() != BOARDSIZE - 1){
+				flag = 1;
+			} else {
+				flag = 0;
+			}
+			break;
+		default:
+			std::cout << "Wrong direction.";
+			flag = 0;
+			break;
+	}
+	return flag;
+}
+int Stage::enemyCanMove(int)
+{
+	return 0;
+}
+
+//Void return functions to move the player and enemy 1 tile
 void Stage::movePlayerLeft()
 {
 	playerLocation->minusX();
