@@ -82,11 +82,11 @@ int main()
 	s1.moveEnemyUp();
 	s1.printEnemyLocation();
 
-	/*cout << "------------" << endl;
+	cout << "------------" << endl;
 	cout << "Left:" << s1.playerCanMove(LEFT) << endl;
 	cout << "Right:" << s1.playerCanMove(RIGHT) << endl;
 	cout << "Up:" << s1.playerCanMove(UP) << endl;
-	cout << "Down:" << s1.playerCanMove(DOWN) << endl;*/
+	cout << "Down:" << s1.playerCanMove(DOWN) << endl;
 
 	/*cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
