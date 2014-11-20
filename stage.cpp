@@ -402,25 +402,41 @@ void Stage::movePlayerDown()
 //Enemy movement
 void Stage::moveEnemyLeft()
 {
-	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
-	board[enemyLocation->getY()][enemyLocation->getX() - 1] = ENEMY;
-	enemyLocation->minusX();
+	if(enemyCanMove(LEFT) == 1){
+		board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+		board[enemyLocation->getY()][enemyLocation->getX() - 1] = ENEMY;
+		enemyLocation->minusX();
+	} else {
+		std::cout << "ERROR" << std::endl;
+	}
 }
 void Stage::moveEnemyRight()
 {
-	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
-	board[enemyLocation->getY()][enemyLocation->getX() + 1] = ENEMY;
-	enemyLocation->plusX();
+	if(enemyCanMove(RIGHT) == 1){
+		board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+		board[enemyLocation->getY()][enemyLocation->getX() + 1] = ENEMY;
+		enemyLocation->plusX();
+	} else {
+		std::cout << "ERROR" << std::endl;
+	}
 }
 void Stage::moveEnemyUp()
 {
-	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
-	board[enemyLocation->getY() - 1][enemyLocation->getX()] = ENEMY;
-	enemyLocation->minusY();
+	if(enemyCanMove(UP) == 1){
+		board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+		board[enemyLocation->getY() - 1][enemyLocation->getX()] = ENEMY;
+		enemyLocation->minusY();
+	} else {
+		std::cout << "ERROR" << std::endl;
+	}
 }
 void Stage::moveEnemyDown()
 {
-	board[enemyLocation->getY()][enemyLocation->getX()] = "_";
-	board[enemyLocation->getY() + 1][enemyLocation->getX()] = ENEMY;
-	enemyLocation->plusY();
+	if(enemyCanMove(DOWN) == 1){
+		board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+		board[enemyLocation->getY() + 1][enemyLocation->getX()] = ENEMY;
+		enemyLocation->plusY();
+	} else {
+		std::cout << "ERROR" << std::endl;
+	}
 }
