@@ -36,14 +36,14 @@ class Stage{
    	int enemyCanMove(int);
    	void printPlayerLocation();
    	void printEnemyLocation();
-   	void movePlayerLeft();
-   	void movePlayerRight();
-   	void movePlayerUp();
-   	void movePlayerDown();
-   	void moveEnemyLeft();
-   	void moveEnemyRight();
-   	void moveEnemyUp();
-   	void moveEnemyDown();
+   	int movePlayerLeft();
+   	int movePlayerRight();
+   	int movePlayerUp();
+   	int movePlayerDown();
+   	int moveEnemyLeft();
+   	int moveEnemyRight();
+   	int moveEnemyUp();
+   	int moveEnemyDown();
 };
 
 #endif
