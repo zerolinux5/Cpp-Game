@@ -393,7 +393,7 @@ int Stage::movePlayerUp()
 		playerLocation->minusY();
 		flag = 1;
 	} else {
-		flag = 1;
+		flag = 0;
 	}
 	return flag;
 }
@@ -404,8 +404,9 @@ int Stage::movePlayerDown()
 		board[playerLocation->getY()][playerLocation->getX()] = "_";
 		board[playerLocation->getY() + 1][playerLocation->getX()] = PLAYER;
 		playerLocation->plusY();
+		flag = 1;
 	} else {
-		std::cout << "ERROR" << std::endl;
+		flag = 0;
 	}
 	return flag;
 }
