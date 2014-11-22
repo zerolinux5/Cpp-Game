@@ -75,25 +75,33 @@ int main()
 
 	//Testing movement through the board
 	cout << endl;
-	s1.movePlayerLeft();
-	s1.moveEnemyRight();
-	s1.printPlayerLocation();
-	s1.printEnemyLocation();
+	if(s1.movePlayerLeft()){
+		cout << "Player Left" << endl;
+	}
+	if (s1.moveEnemyRight()){
+		cout << "Enemy Right" << endl;
+	}
 
-	s1.movePlayerRight();
-	s1.moveEnemyLeft();
-	s1.printPlayerLocation();
-	s1.printEnemyLocation();
+	if (s1.movePlayerRight()){
+		cout << "Player Right" << endl;
+	}
+	if (s1.moveEnemyLeft()){
+		cout << "Enemy Left" << endl;
+	}
 
-	s1.movePlayerUp();
-	s1.moveEnemyDown();
-	s1.printPlayerLocation();
-	s1.printEnemyLocation();
+	if(s1.movePlayerUp()){
+		cout << "Player Up" << endl;
+	}
+	if(s1.moveEnemyDown()){
+		cout << "Enemy Down" << endl;
+	}
 
-	s1.movePlayerDown();
-	s1.printPlayerLocation();
-	s1.moveEnemyUp();
-	s1.printEnemyLocation();
+	if(s1.movePlayerDown()){
+		cout << "Player Down" << endl;
+	}
+	if(s1.moveEnemyUp()){
+		cout << "Enemy Up" << endl;
+	}
 
 	/*cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
