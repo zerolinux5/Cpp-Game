@@ -162,6 +162,7 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 	name = newName;
 	description = newDescription;
 	stageSet = stageNum;
+	objectCount = OBSTACLENUMBER;
 	enemyLocation = new Point(BOARDSIZE/2, 0);
 
 	switch(stageSet){

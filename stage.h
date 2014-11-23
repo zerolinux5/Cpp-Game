@@ -2,6 +2,7 @@
 #define __STAGE_H__
 
 #include "point.h"
+#include "object.h"
 
 #define LEFT 0
 #define RIGHT 1
@@ -18,6 +19,7 @@ class Stage{
 	std::string description;
 	std::string board[BOARDSIZE][BOARDSIZE];
 	int stageSet;
+	int objectCount;
 	Point* playerLocation;
 	Point* enemyLocation;
 
@@ -26,6 +28,7 @@ class Stage{
 	int relocate(std::string, int, int);
    public:
    	Stage(std::string, std::string, int, unsigned int);
+   	int getObjectCount(){return objectCount;}
    	Point* getPlayerLocation() {return playerLocation;}
    	Point* getEnemyLocation() {return enemyLocation;}
    	std::string getName() {return name;}

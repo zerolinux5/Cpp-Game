@@ -103,6 +103,9 @@ int main()
 		cout << "Enemy Up" << endl;
 	}
 
+	cout << endl;
+	cout << "Number of objects on field:" << s1.getObjectCount() << endl;
+
 	/*cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
 	Stage s2 ("Desert", "This stage has nothing...", 2, (rand() % 1000));
