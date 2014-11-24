@@ -169,6 +169,7 @@ void Stage::setBlanks(std::string inChar){
 
 Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsigned int seed)
 {
+	int flag = 1;
 	name = newName;
 	description = newDescription;
 	stageSet = stageNum;
@@ -179,36 +180,22 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 		case 1:
 			setBlanks("_");
 			addObstacles(OBSTACLE,seed);
-
-			//Add enemy starting location and player starting location
-			board[0][BOARDSIZE/2] = ENEMY;
-			if (BOARDSIZE % 2 == 0){
-				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = PLAYER;
-				playerLocation = new Point(BOARDSIZE/2 - 1,BOARDSIZE - 1);
-			} else {
-				board[BOARDSIZE-1][BOARDSIZE/2] = PLAYER;
-				playerLocation = new Point(BOARDSIZE/2,BOARDSIZE - 1);
-			}
 			break;
 		case 2:
 			setBlanks("_");
 			addObstacles(OBSTACLE,seed);
-
-			//Add enemy starting location and player starting location
-			board[0][BOARDSIZE/2] = ENEMY;
-			if (BOARDSIZE % 2 == 0){
-				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = PLAYER;
-				playerLocation = new Point(BOARDSIZE/2 - 1,BOARDSIZE - 1);
-			} else {
-				board[BOARDSIZE-1][BOARDSIZE/2] = PLAYER;
-				playerLocation = new Point(BOARDSIZE/2,BOARDSIZE - 1);
-			}
 			break;
 		case 3:
 			setBlanks("_");
 			addObstacles(OBSTACLE,seed);
-
-			//Add enemy starting location and player starting location
+			break;
+		default:
+			flag = 0;
+			std::cout << "Nothing Here" << std::endl;
+			break;
+	}
+	if (flag){
+		//Add enemy starting location and player starting location
 			board[0][BOARDSIZE/2] = ENEMY;
 			if (BOARDSIZE % 2 == 0){
 				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = PLAYER;
@@ -217,10 +204,6 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 				board[BOARDSIZE-1][BOARDSIZE/2] = PLAYER;
 				playerLocation = new Point(BOARDSIZE/2,BOARDSIZE - 1);
 			}
-			break;
-		default:
-			std::cout << "Nothing Here" << std::endl;
-			break;
 	}
 }
 
