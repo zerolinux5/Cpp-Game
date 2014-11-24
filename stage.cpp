@@ -156,9 +156,19 @@ void Stage::addObstacles(std::string obstacleName, unsigned int seed){
 	}
 }
 
+void Stage::setBlanks(std::string inChar){
+	int i = 0, j = 0;
+	for(;i < BOARDSIZE; i++){
+		for(j = 0;j < BOARDSIZE; j++){
+			board[i][j] = inChar;
+			//std::cout << "G ";
+		}
+		//std::cout << std::endl;
+	}
+}
+
 Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsigned int seed)
 {
-	int i = 0, j = 0;
 	name = newName;
 	description = newDescription;
 	stageSet = stageNum;
@@ -167,14 +177,7 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 
 	switch(stageSet){
 		case 1:
-			int flag;
-			for(;i < BOARDSIZE; i++){
-				for(j = 0;j < BOARDSIZE; j++){
-					board[i][j] = "_";
-					//std::cout << "G ";
-				}
-				//std::cout << std::endl;
-			}
+			setBlanks("_");
 			addObstacles(OBSTACLE,seed);
 
 			//Add enemy starting location and player starting location
@@ -188,13 +191,7 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 			}
 			break;
 		case 2:
-			for(;i < BOARDSIZE; i++){
-				for(j = 0;j < BOARDSIZE; j++){
-					board[i][j] = "_";
-					//std::cout << "D ";
-				}
-				//std::cout << std::endl;
-			}
+			setBlanks("_");
 			addObstacles(OBSTACLE,seed);
 
 			//Add enemy starting location and player starting location
@@ -208,13 +205,7 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 			}
 			break;
 		case 3:
-			for(;i < BOARDSIZE; i++){
-				for(j = 0;j < BOARDSIZE; j++){
-					board[i][j] = "_";
-					//std::cout << "W ";
-				}
-				//std::cout << std::endl;
-			}
+			setBlanks("_");
 			addObstacles(OBSTACLE,seed);
 
 			//Add enemy starting location and player starting location

@@ -26,6 +26,7 @@ class Stage{
 	void addObstacles(std::string, unsigned int);
 	int clasify(int, int);
 	int relocate(std::string, int, int);
+	void setBlanks(std::string);
    public:
    	Stage(std::string, std::string, int, unsigned int);
    	int getObjectCount(){return objectCount;}
