@@ -7,9 +7,10 @@
 
 #define BOARD (board[y][x])
 #define XPLUS (board[y][x+1])
-#define YLPUS (board[y+1][x])
+#define YPLUS (board[y+1][x])
 #define XMINUS (board[y][x-1])
 #define YMINUS (board[y-1][x])
+#define COMPARE(x,y) (x.compare(y) == 0)
 
 #define OBSTACLE "^"
 #define ENEMY "O"
@@ -46,92 +47,91 @@ int Stage::clasify(int x, int y){
 
 int Stage::relocate(std::string obstacleName, int x, int y){
 	int flag = 0, location = clasify(x, y);
-
-	if(obstacleName.compare(BOARD) == 0){
+	if(COMPARE(obstacleName,BOARD)){
 		flag = 1;
 	} else {
 		switch(location){
 			case CornerLeftT:
 				//std::cout << "case CornerLeftT" << std::endl;
-				if (obstacleName.compare(XPLUS) == 0){
+				if (COMPARE(obstacleName,XPLUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YLPUS) == 0){
+				} else if (COMPARE(obstacleName,YPLUS)){
 					flag = 1;
 				}
 				break;
 			case Top:
 				//std::cout << "case Top" << std::endl;
-				if (obstacleName.compare(XPLUS) == 0){
+				if (obstacleName.compare(XPLUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YLPUS) == 0){
+				} else if (obstacleName.compare(YPLUS)){
 					flag = 1;
-				} else if (obstacleName.compare(XMINUS) == 0){
+				} else if (COMPARE(obstacleName,XMINUS)){
 					flag = 1;
 				}
 				break;
 			case CornerRightT:
 				//std::cout << "case CornerRightT" << std::endl;
-				if (obstacleName.compare(XMINUS) == 0){
+				if (COMPARE(obstacleName,XMINUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YLPUS) == 0){
+				} else if (COMPARE(obstacleName,YPLUS)){
 					flag = 1;
 				}
 				break;
 			case Left:
 				//std::cout << "case Left" << std::endl;
-				if (obstacleName.compare(XPLUS) == 0){
+				if (COMPARE(obstacleName,XPLUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YLPUS) == 0){
+				} else if (COMPARE(obstacleName,YPLUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YMINUS) == 0){
+				} else if (COMPARE(obstacleName,YMINUS)){
 					flag = 1;
 				}
 				break;
 			case Middle:
 				//std::cout << "case Middle" << std::endl;
-				if (obstacleName.compare(XPLUS) == 0){
+				if (COMPARE(obstacleName,XPLUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YLPUS) == 0){
+				} else if (COMPARE(obstacleName,YPLUS)){
 					flag = 1;
-				} else if (obstacleName.compare(XMINUS) == 0){
+				} else if (COMPARE(obstacleName,XMINUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YMINUS) == 0){
+				} else if (COMPARE(obstacleName,YMINUS)){
 					flag = 1;
 				}
 				break;
 			case Right:
 				//std::cout << "case Right" << std::endl;
-				if (obstacleName.compare(XMINUS) == 0){
+				if (COMPARE(obstacleName,XMINUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YLPUS) == 0){
+				} else if (COMPARE(obstacleName,YPLUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YMINUS) == 0){
+				} else if (COMPARE(obstacleName,YMINUS)){
 					flag = 1;
 				}
 				break;
 			case CornerLeftB:
 				//std::cout << "case CornerLeftB" << std::endl;
-				if (obstacleName.compare(XPLUS) == 0){
+				if (COMPARE(obstacleName,XPLUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YMINUS) == 0){
+				} else if (COMPARE(obstacleName,YMINUS)){
 					flag = 1;
 				}
 				break;
 			case Bottom:
 				//std::cout << "case Bottom" << std::endl;
-				if (obstacleName.compare(XPLUS) == 0){
+				if (COMPARE(obstacleName,XPLUS)){
 					flag = 1;
-				} else if (obstacleName.compare(XMINUS) == 0){
+				} else if (COMPARE(obstacleName,XMINUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YMINUS) == 0){
+				} else if (COMPARE(obstacleName,YMINUS)){
 					flag = 1;
 				}
 				break;
 			case CornerRightB:
 				//std::cout << "case CornerRightB" << std::endl;
-				if (obstacleName.compare(XMINUS) == 0){
+				if (COMPARE(obstacleName,XMINUS)){
 					flag = 1;
-				} else if (obstacleName.compare(YMINUS) == 0){
+				} else if (COMPARE(obstacleName,YMINUS)){
 					flag = 1;
 				}
 				break;
@@ -196,14 +196,14 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 	}
 	if (flag){
 		//Add enemy starting location and player starting location
-			board[0][BOARDSIZE/2] = ENEMY;
-			if (BOARDSIZE % 2 == 0){
-				board[BOARDSIZE-1][BOARDSIZE/2 - 1] = PLAYER;
-				playerLocation = new Point(BOARDSIZE/2 - 1,BOARDSIZE - 1);
-			} else {
-				board[BOARDSIZE-1][BOARDSIZE/2] = PLAYER;
-				playerLocation = new Point(BOARDSIZE/2,BOARDSIZE - 1);
-			}
+		board[0][BOARDSIZE/2] = ENEMY;
+		if (BOARDSIZE % 2 == 0){
+			board[BOARDSIZE-1][BOARDSIZE/2 - 1] = PLAYER;
+			playerLocation = new Point(BOARDSIZE/2 - 1,BOARDSIZE - 1);
+		} else {
+			board[BOARDSIZE-1][BOARDSIZE/2] = PLAYER;
+			playerLocation = new Point(BOARDSIZE/2,BOARDSIZE - 1);
+		}
 	}
 }
 
@@ -242,7 +242,7 @@ int Stage::playerCanMove(int direction)
 		case LEFT:
 			if(playerLocation->getX() == 0){
 				flag = OFFEND;
-			} else if ((board[playerLocation->getY()][playerLocation->getX() - 1]).compare(OBSTACLE) == 0){
+			} else if (COMPARE((board[playerLocation->getY()][playerLocation->getX() - 1]),OBSTACLE)){
 				flag = CRASH;
 			} else {
 				flag = 1;
@@ -251,7 +251,7 @@ int Stage::playerCanMove(int direction)
 		case RIGHT:
 			if(playerLocation->getX() == BOARDSIZE - 1){
 				flag = OFFEND;
-			} else if ((board[playerLocation->getY()][playerLocation->getX() + 1]).compare(OBSTACLE) == 0){
+			} else if (COMPARE((board[playerLocation->getY()][playerLocation->getX() + 1]),OBSTACLE)){
 				flag = CRASH;
 			} else {
 				flag = 1;
@@ -260,7 +260,7 @@ int Stage::playerCanMove(int direction)
 		case UP:
 			if(playerLocation->getY() == 0){
 				flag = OFFEND;
-			} else if ((board[playerLocation->getY() - 1][playerLocation->getX()]).compare(OBSTACLE) == 0){
+			} else if (COMPARE((board[playerLocation->getY() - 1][playerLocation->getX()]),OBSTACLE)){
 				flag = CRASH;
 			} else {
 				flag = 1;
@@ -269,7 +269,7 @@ int Stage::playerCanMove(int direction)
 		case DOWN:
 			if(playerLocation->getY() == BOARDSIZE - 1){
 				flag = OFFEND;
-			} else if ((board[playerLocation->getY() + 1][playerLocation->getX()]).compare(OBSTACLE) == 0){
+			} else if (COMPARE((board[playerLocation->getY() + 1][playerLocation->getX()]),OBSTACLE)){
 				flag = CRASH;
 			} else {
 				flag = 1;
@@ -290,7 +290,7 @@ int Stage::enemyCanMove(int direction)
 		case LEFT:
 			if(enemyLocation->getX() == 0){
 				flag = OFFEND;
-			} else if ((board[enemyLocation->getY()][enemyLocation->getX() - 1]).compare(OBSTACLE) == 0){
+			} else if (COMPARE((board[enemyLocation->getY()][enemyLocation->getX() - 1]),OBSTACLE)){
 				flag = CRASH;
 			} else {
 				flag = 1;
@@ -299,7 +299,7 @@ int Stage::enemyCanMove(int direction)
 		case RIGHT:
 			if(enemyLocation->getX() == BOARDSIZE - 1){
 				flag = OFFEND;
-			} else if ((board[enemyLocation->getY()][enemyLocation->getX() + 1]).compare(OBSTACLE) == 0){
+			} else if (COMPARE((board[enemyLocation->getY()][enemyLocation->getX() + 1]),OBSTACLE)){
 				flag = CRASH;
 			} else {
 				flag = 1;
@@ -308,7 +308,7 @@ int Stage::enemyCanMove(int direction)
 		case UP:
 			if(enemyLocation->getY() == 0){
 				flag = OFFEND;
-			} else if ((board[enemyLocation->getY() - 1][enemyLocation->getX()]).compare(OBSTACLE) == 0){
+			} else if (COMPARE((board[enemyLocation->getY() - 1][enemyLocation->getX()]),OBSTACLE)){
 				flag = CRASH;
 			} else {
 				flag = 1;
@@ -317,7 +317,7 @@ int Stage::enemyCanMove(int direction)
 		case DOWN:
 			if(enemyLocation->getY() == BOARDSIZE - 1){
 				flag = OFFEND;
-			} else if ((board[enemyLocation->getY() + 1][enemyLocation->getX()]).compare(OBSTACLE) == 0){
+			} else if (COMPARE((board[enemyLocation->getY() + 1][enemyLocation->getX()]),OBSTACLE)){
 				flag = CRASH;
 			} else {
 				flag = 1;
