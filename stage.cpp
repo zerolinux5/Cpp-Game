@@ -15,6 +15,7 @@
 #define OBSTACLE "^"
 #define ENEMY "O"
 #define PLAYER "X"
+#define FIELD "_"
 
 //0-8
 enum Location{CornerLeftT, Top, CornerRightT, Left, Middle, Right, CornerLeftB, Bottom, CornerRightB};
@@ -178,15 +179,15 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsi
 
 	switch(stageSet){
 		case 1:
-			setBlanks("_");
+			setBlanks(FIELD);
 			addObstacles(OBSTACLE,seed);
 			break;
 		case 2:
-			setBlanks("_");
+			setBlanks(FIELD);
 			addObstacles(OBSTACLE,seed);
 			break;
 		case 3:
-			setBlanks("_");
+			setBlanks(FIELD);
 			addObstacles(OBSTACLE,seed);
 			break;
 		default:
@@ -337,7 +338,7 @@ int Stage::movePlayerLeft()
 {
 	int flag;
 	if(playerCanMove(LEFT) == 1){
-		board[playerLocation->getY()][playerLocation->getX()] = "_";
+		board[playerLocation->getY()][playerLocation->getX()] = FIELD;
 		board[playerLocation->getY()][playerLocation->getX() - 1] = PLAYER;
 		playerLocation->minusX();
 		flag = 1;
@@ -350,7 +351,7 @@ int Stage::movePlayerRight()
 {
 	int flag;
 	if(playerCanMove(RIGHT) == 1){
-		board[playerLocation->getY()][playerLocation->getX()] = "_";
+		board[playerLocation->getY()][playerLocation->getX()] = FIELD;
 		board[playerLocation->getY()][playerLocation->getX() + 1] = PLAYER;
 		playerLocation->plusX();
 		flag = 1;
@@ -363,7 +364,7 @@ int Stage::movePlayerUp()
 {
 	int flag;
 	if(playerCanMove(UP) == 1){
-		board[playerLocation->getY()][playerLocation->getX()] = "_";
+		board[playerLocation->getY()][playerLocation->getX()] = FIELD;
 		board[playerLocation->getY() - 1][playerLocation->getX()] = PLAYER;
 		playerLocation->minusY();
 		flag = 1;
@@ -376,7 +377,7 @@ int Stage::movePlayerDown()
 {
 	int flag;
 	if(playerCanMove(DOWN) == 1){
-		board[playerLocation->getY()][playerLocation->getX()] = "_";
+		board[playerLocation->getY()][playerLocation->getX()] = FIELD;
 		board[playerLocation->getY() + 1][playerLocation->getX()] = PLAYER;
 		playerLocation->plusY();
 		flag = 1;
@@ -391,7 +392,7 @@ int Stage::moveEnemyLeft()
 {
 	int flag;
 	if(enemyCanMove(LEFT) == 1){
-		board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+		board[enemyLocation->getY()][enemyLocation->getX()] = FIELD;
 		board[enemyLocation->getY()][enemyLocation->getX() - 1] = ENEMY;
 		enemyLocation->minusX();
 		flag = 1;
@@ -404,7 +405,7 @@ int Stage::moveEnemyRight()
 {
 	int flag;
 	if(enemyCanMove(RIGHT) == 1){
-		board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+		board[enemyLocation->getY()][enemyLocation->getX()] = FIELD;
 		board[enemyLocation->getY()][enemyLocation->getX() + 1] = ENEMY;
 		enemyLocation->plusX();
 		flag = 1;
@@ -417,7 +418,7 @@ int Stage::moveEnemyUp()
 {
 	int flag;
 	if(enemyCanMove(UP) == 1){
-		board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+		board[enemyLocation->getY()][enemyLocation->getX()] = FIELD;
 		board[enemyLocation->getY() - 1][enemyLocation->getX()] = ENEMY;
 		enemyLocation->minusY();
 		flag = 1;
@@ -430,7 +431,7 @@ int Stage::moveEnemyDown()
 {
 	int flag;
 	if(enemyCanMove(DOWN) == 1){
-		board[enemyLocation->getY()][enemyLocation->getX()] = "_";
+		board[enemyLocation->getY()][enemyLocation->getX()] = FIELD;
 		board[enemyLocation->getY() + 1][enemyLocation->getX()] = ENEMY;
 		enemyLocation->plusY();
 		flag = 1;
