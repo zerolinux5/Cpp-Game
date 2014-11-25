@@ -9,6 +9,7 @@ class Object{
 	Object(int, int, std::string);
 	int getHp() {return hp;}
 	int getDef() {return def;}
+	void damaged(int amount) {hp -= (amount - def);}
 	std::string getName() {return name;}
 	void printObject();
 };
