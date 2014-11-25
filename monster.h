@@ -21,6 +21,8 @@ class Monster{
 	int getSp() {return sp;}
 	int getDef() {return def;}
 	int getAtk() {return atk;}
+	void damaged(int damage) {hp -= (damage - def);}
+	void spUse(int amount) {sp -= amount;}
 	std::string getElement() {return element;}
 	std::string getName() {return name;}
 	void printStats();
