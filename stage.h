@@ -28,7 +28,7 @@ class Stage{
 	int relocate(std::string, int, int);
 	void setBlanks(std::string);
    public:
-   	Stage(std::string, std::string, int, unsigned int);
+   	Stage(std::string, std::string, int);
    	int getObjectCount(){return objectCount;}
    	Point* getPlayerLocation() {return playerLocation;}
    	Point* getEnemyLocation() {return enemyLocation;}

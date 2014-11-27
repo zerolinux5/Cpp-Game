@@ -3,7 +3,6 @@
 #include "monster.h"
 
 #include <stdlib.h>
-#include <time.h>
 #include "point.h"
 #include "attack.h"
 #include "object.h"
@@ -49,7 +48,7 @@ int main()
 
 	cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
-	Stage s1 ("Grassland", "This is the basic stage", 1, (rand() % 1000));
+	Stage s1 ("Grassland", "This is the basic stage", 1);
 
 	//cout << "\nShould be either Grass or Tree: " << s1.getBoardLocation(1,1) << endl;
 	//cout << "Should be Null: " << s1.getBoardLocation(100,100) << endl << endl;

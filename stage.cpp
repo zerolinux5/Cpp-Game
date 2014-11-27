@@ -168,13 +168,15 @@ void Stage::setBlanks(std::string inChar){
 	}
 }
 
-Stage::Stage(std::string newName, std::string newDescription, int stageNum, unsigned int seed)
+Stage::Stage(std::string newName, std::string newDescription, int stageNum)
 {
 	int flag = 1;
 	name = newName;
 	description = newDescription;
 	stageSet = stageNum;
 	objectCount = OBSTACLENUMBER;
+	srand (time(NULL));
+	unsigned int seed = rand() % 1000;
 	enemyLocation = new Point(BOARDSIZE/2, 0);
 
 	switch(stageSet){
