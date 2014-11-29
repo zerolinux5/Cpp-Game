@@ -9,10 +9,21 @@
 
 using namespace std;
 
+const int LISTTESTNUM = 3;
+
 int main()
 {
+	int i = 0;
 	//For random seed to pass in to stage
 	srand (time(NULL));
+
+	//Test monsterList.h
+	initialize();
+	for(i = 0; i < LISTTESTNUM; i++){
+		printMonAt(i);
+		cout << endl;
+	}
+	cout << endl;
 
 	/*Point testPoint (5, 10);
 	testPoint.printPoint();
