@@ -3,9 +3,10 @@
 #include "monster.h"
 
 const int MONSTERSIZE = 2;
+std::vector<Monster*> monList(MONSTERSIZE);
 
 void initialize(){
-	std::vector<Monster*> monList(MONSTERSIZE);
+	
 
 	//Attack stats Damage, Range, SP Cost, Name, Description
 	Attack slash (10, 1, 0, "Slash", "Slashes forward");
@@ -35,6 +36,6 @@ void initialize(){
 	monList[2] = &Flamecoon;
 }
 
-void uninitialize(){
-
+Monster getMonAt(int location){
+	return *monList[location];
 }
