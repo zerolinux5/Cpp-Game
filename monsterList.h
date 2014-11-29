@@ -39,3 +39,7 @@ void initialize(){
 Monster getMonAt(int location){
 	return *monList[location];
 }
+
+void printMonAt(int location){
+	monList[location]->printStats();
+}
