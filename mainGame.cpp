@@ -23,6 +23,7 @@ int main()
 		printMonAt(i);
 		cout << endl;
 	}
+	uninitialize();
 	cout << endl;
 
 	/*Point testPoint (5, 10);
