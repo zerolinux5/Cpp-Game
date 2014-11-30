@@ -16,7 +16,7 @@ class Monster{
 	Attack* spHit1;
 	Attack* spHit2;
    public:
-	Monster(int, int, int, int, std::string, std::string, Attack *, Attack *, Attack *);
+	Monster(int, int, int, int, std::string, std::string, Attack, Attack, Attack);
 	int getHp() {return hp;}
 	int getSp() {return sp;}
 	int getDef() {return def;}
@@ -26,6 +26,7 @@ class Monster{
 	std::string getElement() {return element;}
 	std::string getName() {return name;}
 	void printStats();
+	void deleteAttacks();
 };
 
 #endif

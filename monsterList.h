@@ -14,15 +14,15 @@ void initialize(){
 	if(!initialized){
 		initialized = 1;
 		//Attack stats Damage, Range, SP Cost, Name, Description
-		Attack* slash = new Attack(10, 1, 0, "Slash", "Slashes forward");
-		Attack* bite = new Attack(13, 1, 1, "Bite", "Bite the target");
+		Attack slash (10, 1, 0, "Slash", "Slashes forward");
+		Attack bite (13, 1, 1, "Bite", "Bite the target");
 
-		Attack* kunai = new Attack(10, 3, 3, "Kunai", "Throws kunai at target");
-		Attack* shadowStrike = new Attack(25, 2, 7, "Shadow Strike", "Slashes target with kunai");
-		Attack* holydagger = new Attack(30, 1, 10, "Holy Dagger", "Strkes target with holy light");
-		Attack* holyShield = new Attack(50, 1, 20, "Holy Shield", "Shield bashes the target");
-		Attack* blazingFlames = new Attack(100, 3, 40, "Blazing Flames", "Erupt the ground in lava");
-		Attack* firestorm = new Attack(80, 5, 30, "Fire Storm", "Summon fire from the skies");
+		Attack kunai (10, 3, 3, "Kunai", "Throws kunai at target");
+		Attack shadowStrike (25, 2, 7, "Shadow Strike", "Slashes target with kunai");
+		Attack holydagger (30, 1, 10, "Holy Dagger", "Strkes target with holy light");
+		Attack holyShield (50, 1, 20, "Holy Shield", "Shield bashes the target");
+		Attack blazingFlames (100, 3, 40, "Blazing Flames", "Erupt the ground in lava");
+		Attack firestorm (80, 5, 30, "Fire Storm", "Summon fire from the skies");
 		//kunai.printAtk();
 		//cout << endl;
 		//holydagger.printAtk();
@@ -42,6 +42,7 @@ void uninitialize(){
 	int i = 0;
 	if(initialized){
 		for(;i < MONSTERSIZE;i++){
+			monList[i]->deleteAttacks();
 			delete monList[i];
 		}
 	}
