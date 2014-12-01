@@ -49,6 +49,7 @@ class Stage{
    	int moveEnemyUp();
    	int moveEnemyDown();
    	void printObjects();
+   	void clearStage();
 };
 
 #endif

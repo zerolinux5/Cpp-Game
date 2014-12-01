@@ -461,3 +461,14 @@ void Stage::printObjects()
 		std::cout << "\n";
 	}
 }
+
+void Stage::clearStage()
+{
+	int i = 0;
+	for(;i< OBSTACLENUMBER; i++){
+		objectList[i]->deleteObject();
+		delete objectList[i];
+	}
+	delete playerLocation;
+	delete enemyLocation;
+}
