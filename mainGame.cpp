@@ -26,15 +26,6 @@ int main()
 	uninitialize();
 	cout << endl;
 
-	/*Point testPoint (5, 10);
-	testPoint.printPoint();
-	cout << endl;*/
-
-	//Object stats HP, DEF, Name
-	Object tree (100, 2, "Tree");
-	tree.printObject();
-
-	cout << endl;
 	//Set the stage using 3 different values and a default to grab edge cases
 	Stage s1 ("Grassland", "This is the basic stage", 1);
 
