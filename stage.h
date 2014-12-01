@@ -1,6 +1,7 @@
 #ifndef __STAGE_H__
 #define __STAGE_H__
 
+#include <vector>
 #include "point.h"
 #include "object.h"
 
@@ -12,7 +13,6 @@
 #define CRASH 2
 
 const int BOARDSIZE = 10;
-const int OBSTACLENUMBER = 20;
 
 class Stage{
 	std::string name;
@@ -48,6 +48,7 @@ class Stage{
    	int moveEnemyRight();
    	int moveEnemyUp();
    	int moveEnemyDown();
+   	void printObjects();
 };
 
 #endif

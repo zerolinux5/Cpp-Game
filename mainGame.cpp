@@ -35,6 +35,10 @@ int main()
 	s1.printStage();
 
 	cout << endl;
+
+	s1.printObjects();
+	cout << endl;
+
 	s1.printPlayerLocation();
 	s1.printEnemyLocation();
 

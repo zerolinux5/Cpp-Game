@@ -17,6 +17,14 @@
 #define PLAYER "X"
 #define FIELD "_"
 
+
+const int OBSTACLENUMBER = 20;
+std::vector<Object*> objectList(OBSTACLENUMBER);
+
+const std::string OBJECTNAME = "Tree";
+const int OBJECTHP = 20;
+const int OBJECTDEF = 5;
+
 //0-8
 enum Location{CornerLeftT, Top, CornerRightT, Left, Middle, Right, CornerLeftB, Bottom, CornerRightB};
 
@@ -153,6 +161,7 @@ void Stage::addObstacles(std::string obstacleName, unsigned int seed){
 			randX = rand() % BOARDSIZE;
 			randY = rand() % BOARDSIZE;
 		} while (relocate(obstacleName, randX, randY));
+		objectList[i] = new Object(OBJECTHP, OBJECTDEF, OBJECTNAME, randX, randY);
 		board[randY][randX] = obstacleName;
 	}
 }
@@ -441,4 +450,14 @@ int Stage::moveEnemyDown()
 		flag = 0;
 	}
 	return flag;
+}
+
+void Stage::printObjects()
+{
+	int i = 0;
+	for(;i< OBSTACLENUMBER; i++){
+		std::cout << (i+1) << " :\n";
+		objectList[i]->printObject();
+		std::cout << "\n";
+	}
 }
