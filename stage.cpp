@@ -177,9 +177,12 @@ void Stage::setBlanks(std::string inChar){
 	}
 }
 
-Stage::Stage(std::string newName, std::string newDescription, int stageNum)
+Stage::Stage(std::string newName, std::string newDescription, int stageNum, Monster enemyMon, Monster playerMon)
 {
 	int flag = 1;
+
+	enemy = new Monster(enemyMon);
+	player = new Monster(playerMon);
 	name = newName;
 	description = newDescription;
 	stageSet = stageNum;
@@ -452,6 +455,22 @@ int Stage::moveEnemyDown()
 	return flag;
 }
 
+void Stage::printPlayer()
+{
+	std::cout << "Player:" << std::endl;
+	player->printStats();
+	std::cout << "With location at:" << std::endl;
+	playerLocation->printPoint();
+}
+
+void Stage::printEnemy()
+{
+	std::cout << "Enemy:" << std::endl;
+	enemy->printStats();
+	std::cout << "With location at:" << std::endl;
+	enemyLocation->printPoint();
+}
+
 void Stage::printObjects()
 {
 	int i = 0;
@@ -471,6 +490,8 @@ void Stage::clearStage()
 		objectList[i]->deleteObject();
 		delete objectList[i];
 	}
+	delete player;
+	delete enemy;
 	delete playerLocation;
 	delete enemyLocation;
 }

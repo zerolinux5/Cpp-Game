@@ -4,6 +4,7 @@
 #include <vector>
 #include "point.h"
 #include "object.h"
+#include "monster.h"
 
 #define LEFT 0
 #define RIGHT 1
@@ -22,6 +23,8 @@ class Stage{
 	int objectCount;
 	Point* playerLocation;
 	Point* enemyLocation;
+	Monster* enemy;
+	Monster* player;
 
 	void addObstacles(std::string, unsigned int);
 	int clasify(int, int);
@@ -29,13 +32,13 @@ class Stage{
 	void setBlanks(std::string);
    public:
    	//Constructor and deconstructor
-   	Stage(std::string, std::string, int);
+   	Stage(std::string, std::string, int, Monster, Monster);
    	void clearStage();
 
    	//Getters
    	int getObjectCount(){return objectCount;}
-   	Point* getPlayerLocation() {return playerLocation;}
-   	Point* getEnemyLocation() {return enemyLocation;}
+   	Point getPlayerLocation() {return *playerLocation;}
+   	Point getEnemyLocation() {return *enemyLocation;}
    	std::string getName() {return name;}
    	std::string getDescription() {return description;}
    	std::string getBoardLocation(int y, int x) {return (((x < BOARDSIZE) && (y < BOARDSIZE)) ? board[y][x] : "NULL");}
@@ -59,6 +62,11 @@ class Stage{
    	void printPlayerLocation();
    	void printEnemyLocation();
    	void printObjects();
+   	void printEnemy();
+   	void printPlayer();
+
+   	//AI
+   	void moveEnemy();
 };
 
 #endif

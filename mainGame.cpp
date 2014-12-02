@@ -23,18 +23,21 @@ int main()
 		printMonAt(i);
 		cout << endl;
 	}
-	uninitialize();
 	cout << endl;
 
 	//Set the stage using 3 different values and a default to grab edge cases
-	Stage s1 ("Grassland", "This is the basic stage", 1);
-
-	//cout << "\nShould be either Grass or Tree: " << s1.getBoardLocation(1,1) << endl;
-	//cout << "Should be Null: " << s1.getBoardLocation(100,100) << endl << endl;
+	Stage s1 ("Grassland", "This is the basic stage", 1, getMonAt(0), getMonAt(1));
 
 	s1.printStage();
 
 	cout << endl;
+
+	//Print monsters on field
+	s1.printPlayer();
+	s1.printEnemy();
+
+/*	cout << "\nShould be either Grass or Tree: " << s1.getBoardLocation(1,1) << endl;
+	cout << "Should be Null: " << s1.getBoardLocation(100,100) << endl << endl;
 
 	s1.printObjects();
 	cout << endl;
@@ -87,19 +90,9 @@ int main()
 
 	cout << endl;
 	cout << "Number of objects on field:" << s1.getObjectCount() << endl;
-	s1.clearStage();
+	s1.clearStage();*/
 
-	/*cout << endl;
-	//Set the stage using 3 different values and a default to grab edge cases
-	Stage s2 ("Desert", "This stage has nothing...", 2, (rand() % 1000));
-	s2.printStage();
-
-	cout << endl;
-	//Set the stage using 3 different values and a default to grab edge cases
-	Stage s3 ("Stadium", "This stage has nothing...", 3, (rand() % 1000));
-	s3.printStage();*/
-
-
+	uninitialize();
 
 	return 0;
 }
