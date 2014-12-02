@@ -13,19 +13,19 @@ const int LISTTESTNUM = 3;
 
 int main()
 {
-	int i = 0;
+	//int i = 0;
 	//For random seed to pass in to stage
 	srand (time(NULL));
 
 	//Test monsterList.h
 	initialize();
-	for(i = 0; i < LISTTESTNUM; i++){
+	/*for(i = 0; i < LISTTESTNUM; i++){
 		printMonAt(i);
 		cout << endl;
 	}
-	cout << endl;
+	cout << endl;*/
 
-	//Set the stage using 3 different values and a default to grab edge cases
+	//Set the stage and set Racoonja and Ninjacoon
 	Stage s1 ("Grassland", "This is the basic stage", 1, getMonAt(0), getMonAt(1));
 
 	s1.printStage();

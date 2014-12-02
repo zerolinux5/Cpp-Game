@@ -11,8 +11,22 @@ Monster::Monster(int newHp, int newSp, int newAtk, int newDef, std::string newEl
 	element = newElement;
 	name = newName;
 	basicHit = new Attack(baseHit);
+	maxDamage = basicHit->getDamage();
+	maxRange = basicHit->getRange();
 	spHit1 = new Attack(newSpHit1);
+	if(spHit1->getDamage() > maxDamage){
+		maxDamage = spHit1->getDamage();
+	}
+	if(spHit1->getRange() > maxRange){
+		maxRange = spHit1->getRange();
+	}
 	spHit2 = new Attack(newSpHit2);
+	if(spHit2->getDamage() > maxDamage){
+		maxDamage = spHit2->getDamage();
+	}
+	if(spHit2->getRange() > maxRange){
+		maxRange = spHit2->getRange();
+	}
 }
 
 void Monster::printStats(){
