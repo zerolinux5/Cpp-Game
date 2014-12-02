@@ -465,6 +465,8 @@ void Stage::printObjects()
 void Stage::clearStage()
 {
 	int i = 0;
+	name = "";
+	description = "";
 	for(;i< OBSTACLENUMBER; i++){
 		objectList[i]->deleteObject();
 		delete objectList[i];
