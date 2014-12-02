@@ -9,7 +9,11 @@ class Object{
 	std::string name;
 	Point* location;
    public:
+   	//Constructors and Deconstructor
 	Object(int, int, std::string, int, int);
+	void deleteObject();
+
+	//Getters
 	int getHp() {return hp;}
 	int getDef() {return def;}
 	void damaged(int amount) {hp -= (amount - def);}
@@ -17,8 +21,9 @@ class Object{
 	Point getLocation() {return *location;}
 	int getXPos() {return location->getX();}
 	int getYPos() {return location->getY();}
+
+	//Print
 	void printObject();
-	void deleteObject();
 };
 
 #endif

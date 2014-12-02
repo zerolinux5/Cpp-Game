@@ -28,18 +28,23 @@ class Stage{
 	int relocate(std::string, int, int);
 	void setBlanks(std::string);
    public:
+   	//Constructor and deconstructor
    	Stage(std::string, std::string, int);
+   	void clearStage();
+
+   	//Getters
    	int getObjectCount(){return objectCount;}
    	Point* getPlayerLocation() {return playerLocation;}
    	Point* getEnemyLocation() {return enemyLocation;}
    	std::string getName() {return name;}
    	std::string getDescription() {return description;}
    	std::string getBoardLocation(int y, int x) {return (((x < BOARDSIZE) && (y < BOARDSIZE)) ? board[y][x] : "NULL");}
-   	void printStage();
+
+   	//Check movement
    	int playerCanMove(int);
    	int enemyCanMove(int);
-   	void printPlayerLocation();
-   	void printEnemyLocation();
+
+   	//Movements
    	int movePlayerLeft();
    	int movePlayerRight();
    	int movePlayerUp();
@@ -48,8 +53,12 @@ class Stage{
    	int moveEnemyRight();
    	int moveEnemyUp();
    	int moveEnemyDown();
+
+   	//Print Commands
+   	void printStage();
+   	void printPlayerLocation();
+   	void printEnemyLocation();
    	void printObjects();
-   	void clearStage();
 };
 
 #endif

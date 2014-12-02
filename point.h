@@ -6,13 +6,18 @@ class Point{
 	int y;
 
    public:
+      //Constructor
    	Point(int,int);
+
+      //Getters
    	int getX() {return x;}
    	int getY() {return y;}
    	void plusX() {x++;}
    	void plusY() {y++;}
    	void minusX() {x--;}
    	void minusY() {y--;}
+
+      //Print
    	void printPoint();
 };
 
