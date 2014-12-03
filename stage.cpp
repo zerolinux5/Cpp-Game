@@ -17,6 +17,8 @@
 #define ENEMY "O"
 #define PLAYER "X"
 #define FIELD "_"
+#define TESTMON1 (*monList[0])
+#define TESTMON2 (*monList[1])
 
 
 const int OBSTACLENUMBER = 20;
@@ -183,8 +185,8 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum)
 	int flag = 1;
 	initialize();
 
-	enemy = new Monster(*monList[0]);
-	player = new Monster(*monList[1]);
+	enemy = new Monster(TESTMON1);
+	player = new Monster(TESTMON2);
 	name = newName;
 	description = newDescription;
 	stageSet = stageNum;
