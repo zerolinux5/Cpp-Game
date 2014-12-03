@@ -45,6 +45,7 @@ void uninitialize(){
 			monList[i]->deleteAttacks();
 			delete monList[i];
 		}
+		initialized = 0;
 	}
 }
 

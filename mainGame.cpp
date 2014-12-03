@@ -5,28 +5,24 @@
 #include "attack.h"
 #include "object.h"
 #include "stage.h"
-#include "monsterList.h"
 
 using namespace std;
-
-const int LISTTESTNUM = 3;
 
 int main()
 {
 	//int i = 0;
 	//For random seed to pass in to stage
-	srand (time(NULL));
+	//srand (time(NULL));
 
 	//Test monsterList.h
-	initialize();
-	/*for(i = 0; i < LISTTESTNUM; i++){
+	/*for(i = 0; i < MONSTERSIZE; i++){
 		printMonAt(i);
 		cout << endl;
 	}
 	cout << endl;*/
 
 	//Set the stage and set Racoonja and Ninjacoon
-	Stage s1 ("Grassland", "This is the basic stage", 1, getMonAt(0), getMonAt(1));
+	Stage s1 ("Grassland", "This is the basic stage", 1);
 
 	s1.printStage();
 
@@ -92,7 +88,6 @@ int main()
 	cout << "Number of objects on field:" << s1.getObjectCount() << endl;
 	s1.clearStage();*/
 
-	uninitialize();
 
 	return 0;
 }

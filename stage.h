@@ -30,9 +30,10 @@ class Stage{
 	int clasify(int, int);
 	int relocate(std::string, int, int);
 	void setBlanks(std::string);
+
    public:
    	//Constructor and deconstructor
-   	Stage(std::string, std::string, int, Monster, Monster);
+   	Stage(std::string, std::string, int);
    	void clearStage();
 
    	//Getters

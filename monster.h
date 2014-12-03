@@ -17,6 +17,7 @@ class Monster{
 	Attack* spHit2;
 	int maxRange;
 	int maxDamage;
+
    public:
    	//Constructor and Deconstructor
 	Monster(int, int, int, int, std::string, std::string, Attack, Attack, Attack);
@@ -42,5 +43,4 @@ class Monster{
 	//Print
 	void printStats();
 };
-
 #endif

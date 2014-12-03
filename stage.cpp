@@ -4,6 +4,7 @@
 #include <time.h>
 #include "stage.h"
 #include "object.h"
+#include "monsterList.h"
 
 #define BOARD (board[y][x])
 #define XPLUS (board[y][x+1])
@@ -177,12 +178,13 @@ void Stage::setBlanks(std::string inChar){
 	}
 }
 
-Stage::Stage(std::string newName, std::string newDescription, int stageNum, Monster enemyMon, Monster playerMon)
+Stage::Stage(std::string newName, std::string newDescription, int stageNum)
 {
 	int flag = 1;
+	initialize();
 
-	enemy = new Monster(enemyMon);
-	player = new Monster(playerMon);
+	enemy = new Monster(*monList[0]);
+	player = new Monster(*monList[1]);
 	name = newName;
 	description = newDescription;
 	stageSet = stageNum;
@@ -483,6 +485,7 @@ void Stage::printObjects()
 
 void Stage::clearStage()
 {
+	uninitialize();
 	int i = 0;
 	name = "";
 	description = "";

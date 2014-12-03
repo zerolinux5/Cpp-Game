@@ -7,6 +7,7 @@ class Attack{
 	int cost;
 	std::string name;
 	std::string description;
+
    public:
    	//Constructor
 	Attack(int, int, int, std::string, std::string);

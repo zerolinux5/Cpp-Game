@@ -8,6 +8,7 @@ class Object{
 	int def;
 	std::string name;
 	Point* location;
+	
    public:
    	//Constructors and Deconstructor
 	Object(int, int, std::string, int, int);
