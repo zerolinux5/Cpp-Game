@@ -1,8 +1,6 @@
 #include <string>
 #include <stdlib.h> 
 #include "stage.h"
-//0-1
-enum Strategy{Offense, Defense}; 
 
 //Move the enemy based on algorithm this is based off of 2 move per turn rule
 void Stage::moveEnemy(){
@@ -16,9 +14,9 @@ void Stage::moveEnemy(){
 
 	//Have 2 cases whether offensive or defensive depending on the health of the monster
 	if(enemy->getHp() <= (enemy->getTotalHp()/2)){
-
+		//Will try to hit and run, else run in x, run in y
 	} else {
-
+		//Will try to hit twice, else move and hit, else move twice
 	}
 
 	//Algorithm will pick the difference that is bigger

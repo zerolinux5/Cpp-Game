@@ -1,15 +1,15 @@
 run:
 	make all
 	clear
-	./mainGame
+	./tests
 
-all: mainGame
+all: tests
 
-mainGame: mainGame.o monster.o attack.o object.o stage.o point.o ai.o
-	g++ -o mainGame point.o attack.o monster.o object.o stage.o ai.o mainGame.o
+tests: tests.o monster.o attack.o object.o stage.o point.o ai.o
+	g++ -o tests point.o attack.o monster.o object.o stage.o ai.o tests.o
 
-mainGame.o: mainGame.cpp monster.cpp attack.cpp object.cpp stage.cpp point.cpp ai.cpp
-	g++ -c point.cpp attack.cpp monster.cpp object.cpp stage.cpp ai.cpp mainGame.cpp
+tests.o: tests.cpp monster.cpp attack.cpp object.cpp stage.cpp point.cpp ai.cpp
+	g++ -c point.cpp attack.cpp monster.cpp object.cpp stage.cpp ai.cpp tests.cpp
 
 clean:
-	rm *.o mainGame
+	rm *.o tests

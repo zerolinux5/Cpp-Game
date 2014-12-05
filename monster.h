@@ -20,9 +20,15 @@ class Monster{
 	int minSp;
 	int totalHp;
 
+	//Only for turn based
+	int movement;
+
    public:
    	//Constructor and Deconstructor
 	Monster(int, int, int, int, std::string, std::string, Attack, Attack, Attack);
+
+	//Only for turn based
+	Monster(int, int, int, int, int, std::string, std::string, Attack, Attack, Attack);
 	void deleteAttacks();
 
 	//Getters
@@ -39,6 +45,9 @@ class Monster{
 	Attack getBasic() {return *basicHit;}
 	Attack getSpHit1() {return *spHit1;}
 	Attack getSpHit2() {return *spHit2;}
+
+	//Only for turn based
+	int getMovement() {return movement;}
 
 	// Setters
 	void damaged(int damage) {hp -= (damage - def);}
