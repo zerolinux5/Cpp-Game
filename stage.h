@@ -68,6 +68,7 @@ class Stage{
 
    	//AI
    	void moveEnemy();
+   	void printList();
 };
 
 #endif

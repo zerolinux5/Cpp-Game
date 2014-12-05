@@ -500,3 +500,12 @@ void Stage::clearStage()
 	delete playerLocation;
 	delete enemyLocation;
 }
+
+void Stage::printList(){
+	int i = 0;
+	for(;i < MONSTERSIZE; i++){
+		std::cout << (i+1) << ": ";
+		printMonAt(i);
+		std::cout << std::endl;
+	}
+}
