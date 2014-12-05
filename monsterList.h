@@ -2,7 +2,7 @@
 #include <string>
 #include "monster.h"
 
-const int MONSTERSIZE = 5;
+const int MONSTERSIZE = 6;
 int initialized = 0;
 std::vector<Monster*> monList(MONSTERSIZE);
 
@@ -26,6 +26,7 @@ void initialize(){
 		Attack icestorm (70, 7, 25, "Ice Storm", "Summon a blizzard towards the enemy");
 		Attack freeze(40, 3, 15, "Freeze", "Send an icy wind to freeze the target");
 		Attack assassinate (150, 1, 70, "Assassinate", "Use all one's energy to finish off the target");
+		Attack darkslash (100, 2, 30, "Dark Slash", "Strike the enemy with a darkness augmented kunai");
 		//kunai.printAtk();
 		//cout << endl;
 		//holydagger.printAtk();
@@ -36,12 +37,14 @@ void initialize(){
 		Monster* Flamecoon = new Monster(30,100, 30, 25, "Fire", "Flamecoon", bite, blazingFlames, firestorm);
 		Monster* Icecoon = new Monster(40, 100, 25, 20, "Ice", "Icecoon", bite, freeze, icestorm);
 		Monster* Dracocoon = new Monster(100, 150, 75, 50, "Dragon", "Dracocoon", slash, blazingFlames, icestorm);
+		Monster* Necrocoon = new Monster(100, 150, 90, 20, "Darkness", "Necrocoon", slash, darkslash, assassinate);
 
 		monList[0] = Racoonja;
 		monList[1] = Ninjacoon;
 		monList[2] = Flamecoon;
 		monList[3] = Icecoon;
 		monList[4] = Dracocoon;
+		monList[5] = Necrocoon;
 	}
 }
 
