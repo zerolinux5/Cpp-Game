@@ -17,6 +17,8 @@ class Monster{
 	Attack* spHit2;
 	int maxRange;
 	int maxDamage;
+	int minSp;
+	int totalHp;
 
    public:
    	//Constructor and Deconstructor
@@ -30,6 +32,8 @@ class Monster{
 	int getAtk() {return atk;}
 	int getMaxRange() {return maxRange;}
 	int getMaxDamage() {return maxDamage;}
+	int getMinSp() {return minSp;}
+	int getTotalHp() {return totalHp;}
 	std::string getElement() {return element;}
 	std::string getName() {return name;}
 	Attack getBasic() {return *basicHit;}

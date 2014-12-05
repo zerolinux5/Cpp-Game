@@ -4,15 +4,18 @@
 
 Monster::Monster(int newHp, int newSp, int newAtk, int newDef, std::string newElement, std::string newName, Attack baseHit, Attack newSpHit1, Attack newSpHit2)
 {
-	hp = newHp;
+	hp = totalHp = newHp;
 	sp = newSp;
 	atk = newAtk;
 	def = newDef;
 	element = newElement;
 	name = newName;
+
+	//Add attacks and check max and min values
 	basicHit = new Attack(baseHit);
 	maxDamage = basicHit->getDamage();
 	maxRange = basicHit->getRange();
+	minSp = basicHit->getCost();
 	spHit1 = new Attack(newSpHit1);
 	if(spHit1->getDamage() > maxDamage){
 		maxDamage = spHit1->getDamage();
@@ -20,12 +23,18 @@ Monster::Monster(int newHp, int newSp, int newAtk, int newDef, std::string newEl
 	if(spHit1->getRange() > maxRange){
 		maxRange = spHit1->getRange();
 	}
+	if(spHit1->getCost() < minSp){
+		minSp = spHit1->getCost();
+	}
 	spHit2 = new Attack(newSpHit2);
 	if(spHit2->getDamage() > maxDamage){
 		maxDamage = spHit2->getDamage();
 	}
 	if(spHit2->getRange() > maxRange){
 		maxRange = spHit2->getRange();
+	}
+	if(spHit2->getCost() < minSp){
+		minSp = spHit2->getCost();
 	}
 }
 
