@@ -60,6 +60,7 @@ class Stage{
 
    	//Print Commands
    	void printStage();
+      void printStageName();
    	void printPlayerLocation();
    	void printEnemyLocation();
    	void printObjects();

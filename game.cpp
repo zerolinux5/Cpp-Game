@@ -7,12 +7,10 @@ using namespace std;
 
 int main()
 {
-	int response;
-	Stage s1 ("Grassland", "This is the basic stage", 1);
-
-	s1.printList();
-	cout << "Pick your character:";
-	cin >> response;
+	int player, enemy;
+	Stage s1 ("Grassland", "Grass stage with trees", 1);
+	Stage s2 ("Marshes", "Muddy land with swamps", 2);
+	Stage s3 ("Mountains", "Mountain area with high peaks", 3);
 
 	return 0;
 }

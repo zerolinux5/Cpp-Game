@@ -509,3 +509,8 @@ void Stage::printList(){
 		std::cout << std::endl;
 	}
 }
+
+void Stage::printStageName(){
+	std::cout << name << std::endl;
+	std::cout << description << std::endl;
+}
