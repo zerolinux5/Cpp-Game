@@ -39,6 +39,13 @@ int main()
 				cout << "\nEnter which monster you will fight (1-" << MONSTERLIST << "): ";
 				cin >> enemy;
 			} while(enemy < 0 || enemy > MONSTERLIST);
+			s1.setPlayer(player);
+			s1.setEnemy(enemy);
+
+			//Debug
+			s1.printPlayer();
+			cout << endl;
+			s1.printEnemy();
 			break;
 		case 2:
 			do{
@@ -51,6 +58,13 @@ int main()
 				cout << "\nEnter which monster you will fight (1-" << MONSTERLIST << "): ";
 				cin >> enemy;
 			} while(enemy < 0 || enemy > MONSTERLIST);
+			s2.setPlayer(player);
+			s2.setEnemy(enemy);
+
+			//Debug
+			s2.printPlayer();
+			cout << endl;
+			s2.printEnemy();
 			break;
 		case 3:
 			do{
@@ -63,6 +77,13 @@ int main()
 				cout << "\nEnter which monster you will fight (1-" << MONSTERLIST << "): ";
 				cin >> enemy;
 			} while(enemy < 0 || enemy > MONSTERLIST);
+			s3.setPlayer(player);
+			s3.setEnemy(enemy);
+
+			//Debug
+			s3.printPlayer();
+			cout << endl;
+			s3.printEnemy();
 			break;
 		default:
 			break;
