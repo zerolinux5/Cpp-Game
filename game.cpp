@@ -4,11 +4,9 @@
 #include "stage.h"
 
 #define MAXSTAGES 3
-#define MONSTERLIST 8
+#define MONSTERLIST 6
 
 using namespace std;
-
-int getPlayerCharacter()
 
 int main()
 {
@@ -31,14 +29,40 @@ int main()
 
 	switch(stage){
 		case 1:
-			s1.printList();
-
+			do{
+				s1.printList();
+				cout << "\nEnter which monster you will use (1-" << MONSTERLIST << "): ";
+				cin >> player;
+			} while(player < 0 || player > MONSTERLIST);
+			do{
+				s1.printList();
+				cout << "\nEnter which monster you will fight (1-" << MONSTERLIST << "): ";
+				cin >> enemy;
+			} while(enemy < 0 || enemy > MONSTERLIST);
 			break;
 		case 2:
-			s2.printList();
+			do{
+				s2.printList();
+				cout << "\nEnter which monster you will use (1-" << MONSTERLIST << "): ";
+				cin >> player;
+			} while(player < 0 || player > MONSTERLIST);
+			do{
+				s2.printList();
+				cout << "\nEnter which monster you will fight (1-" << MONSTERLIST << "): ";
+				cin >> enemy;
+			} while(enemy < 0 || enemy > MONSTERLIST);
 			break;
 		case 3:
-			s3.printList();
+			do{
+				s3.printList();
+				cout << "\nEnter which monster you will use (1-" << MONSTERLIST << "): ";
+				cin >> player;
+			} while(player < 0 || player > MONSTERLIST);
+			do{
+				s3.printList();
+				cout << "\nEnter which monster you will fight (1-" << MONSTERLIST << "): ";
+				cin >> enemy;
+			} while(enemy < 0 || enemy > MONSTERLIST);
 			break;
 		default:
 			break;
