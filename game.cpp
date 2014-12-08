@@ -4,8 +4,11 @@
 #include "stage.h"
 
 #define MAXSTAGES 3
+#define MONSTERLIST 8
 
 using namespace std;
+
+int getPlayerCharacter()
 
 int main()
 {
@@ -25,6 +28,21 @@ int main()
 		cout << "Enter which Stage:(1-3):";
 		cin >> stage;
 	} while (stage < 0 || stage > MAXSTAGES);
+
+	switch(stage){
+		case 1:
+			s1.printList();
+
+			break;
+		case 2:
+			s2.printList();
+			break;
+		case 3:
+			s3.printList();
+			break;
+		default:
+			break;
+	}
 
 	return 0;
 }

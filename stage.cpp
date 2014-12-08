@@ -226,6 +226,18 @@ Stage::Stage(std::string newName, std::string newDescription, int stageNum)
 	}
 }
 
+void Stage::setPlayer(int monNum)
+{
+	delete player;	
+	player = new Monster(*monList[monNum-1]);
+}
+
+void Stage::setEnemy(int monNum)
+{
+	delete enemy;
+	enemy = new Monster(*monList[monNum-1]);
+}
+
 void Stage::printStage()
 {
 	int x = 0, y = 0;

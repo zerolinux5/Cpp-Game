@@ -35,6 +35,8 @@ class Stage{
    	//Constructor and deconstructor
    	Stage(std::string, std::string, int);
    	void clearStage();
+      void setPlayer(int);
+      void setEnemy(int);
 
    	//Getters
    	int getObjectCount(){return objectCount;}
