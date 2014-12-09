@@ -5,8 +5,13 @@
 
 #define MAXSTAGES 3
 #define MONSTERLIST 6
+#define ACTIONSPERTURN 2
 
 using namespace std;
+
+void command(){
+	
+}
 
 int main()
 {
@@ -31,12 +36,12 @@ int main()
 		case 1:
 			do{
 				s1.printList();
-				cout << "\nEnter which monster you will use (1-" << MONSTERLIST << "): ";
+				cout << "\nEnter which monster player 1 will use (1-" << MONSTERLIST << "): ";
 				cin >> player;
 			} while(player < 0 || player > MONSTERLIST);
 			do{
 				s1.printList();
-				cout << "\nEnter which monster you will fight (1-" << MONSTERLIST << "): ";
+				cout << "\nEnter which monster player 2 will use (1-" << MONSTERLIST << "): ";
 				cin >> enemy;
 			} while(enemy < 0 || enemy > MONSTERLIST);
 			s1.setPlayer(player);
@@ -50,12 +55,12 @@ int main()
 		case 2:
 			do{
 				s2.printList();
-				cout << "\nEnter which monster you will use (1-" << MONSTERLIST << "): ";
+				cout << "\nEnter which monster player 1 will use (1-" << MONSTERLIST << "): ";
 				cin >> player;
 			} while(player < 0 || player > MONSTERLIST);
 			do{
 				s2.printList();
-				cout << "\nEnter which monster you will fight (1-" << MONSTERLIST << "): ";
+				cout << "\nEnter which monster player 2 will use (1-" << MONSTERLIST << "): ";
 				cin >> enemy;
 			} while(enemy < 0 || enemy > MONSTERLIST);
 			s2.setPlayer(player);
@@ -69,12 +74,12 @@ int main()
 		case 3:
 			do{
 				s3.printList();
-				cout << "\nEnter which monster you will use (1-" << MONSTERLIST << "): ";
+				cout << "\nEnter which monster player 1 will use (1-" << MONSTERLIST << "): ";
 				cin >> player;
 			} while(player < 0 || player > MONSTERLIST);
 			do{
 				s3.printList();
-				cout << "\nEnter which monster you will fight (1-" << MONSTERLIST << "): ";
+				cout << "\nEnter which monster player 2 will use (1-" << MONSTERLIST << "): ";
 				cin >> enemy;
 			} while(enemy < 0 || enemy > MONSTERLIST);
 			s3.setPlayer(player);

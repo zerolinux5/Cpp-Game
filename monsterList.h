@@ -32,12 +32,13 @@ void initialize(){
 		//holydagger.printAtk();
 		//cout << endl;
 
-		Monster* Racoonja = new Monster(10, 30, 5, 3, "Darkness", "Racoonja", slash, kunai, shadowStrike);
-		Monster* Ninjacoon = new Monster(15, 50, 4, 4, "Light", "Ninjacoon", slash, holydagger, holyShield);
-		Monster* Flamecoon = new Monster(30,100, 30, 25, "Fire", "Flamecoon", bite, blazingFlames, firestorm);
-		Monster* Icecoon = new Monster(40, 100, 25, 20, "Ice", "Icecoon", bite, freeze, icestorm);
-		Monster* Dracocoon = new Monster(100, 150, 75, 50, "Dragon", "Dracocoon", slash, blazingFlames, icestorm);
-		Monster* Necrocoon = new Monster(100, 150, 90, 20, "Darkness", "Necrocoon", slash, darkslash, assassinate);
+		//Monster stats: HP, SP, Attack, Defense, Movement, Nature, Name, Basic, Special 1, Special 2
+		Monster* Racoonja = new Monster(10, 30, 5, 3, 3, "Darkness", "Racoonja", slash, kunai, shadowStrike);
+		Monster* Ninjacoon = new Monster(15, 50, 4, 4, 6, "Light", "Ninjacoon", slash, holydagger, holyShield);
+		Monster* Flamecoon = new Monster(30,100, 30, 25, 4, "Fire", "Flamecoon", bite, blazingFlames, firestorm);
+		Monster* Icecoon = new Monster(40, 100, 25, 20, 4, "Ice", "Icecoon", bite, freeze, icestorm);
+		Monster* Dracocoon = new Monster(100, 150, 75, 50, 5, "Dragon", "Dracocoon", slash, blazingFlames, icestorm);
+		Monster* Necrocoon = new Monster(100, 150, 90, 20, 5, "Darkness", "Necrocoon", slash, darkslash, assassinate);
 
 		monList[0] = Racoonja;
 		monList[1] = Ninjacoon;
