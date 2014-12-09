@@ -9,7 +9,15 @@
 
 using namespace std;
 
-void command(){
+//Will be the basic outline for the game
+void update()
+{
+
+}
+
+//Will prompt for command and execute
+void command()
+{
 	
 }
 
@@ -51,6 +59,9 @@ int main()
 			s1.printPlayer();
 			cout << endl;
 			s1.printEnemy();
+
+			//End
+			s1.clearStage();
 			break;
 		case 2:
 			do{
@@ -70,6 +81,9 @@ int main()
 			s2.printPlayer();
 			cout << endl;
 			s2.printEnemy();
+
+			//End
+			s2.clearStage();
 			break;
 		case 3:
 			do{
@@ -89,6 +103,9 @@ int main()
 			s3.printPlayer();
 			cout << endl;
 			s3.printEnemy();
+
+			//End
+			s3.clearStage();
 			break;
 		default:
 			break;
